@@ -1160,7 +1160,7 @@ function snsCustomer(){
 function snsPaystack(){
   var c=snsCustomer();if(!c)return;
   var handler=PaystackPop.setup({
-    key:pk_live_197cfa3ff1fa74a912f25cfd9eb8f95c4ec3ff2f,
+    key:'pk_live_197cfa3ff1fa74a912f25cfd9eb8f95c4ec3ff2f',
     email:c.email,amount:750000,currency:'NGN',
     ref:'SNS2_PS_'+Date.now(),
     metadata:{custom_fields:[
@@ -1186,7 +1186,7 @@ function snsPaystack(){
 function snsFlutterwave(){
   var c=snsCustomer();if(!c)return;
   FlutterwaveCheckout({
-    public_key:FLWPUBK-686a1e6200ecfa5aee5012f1aaa4a333-X,
+    public_key:'FLWPUBK-686a1e6200ecfa5aee5012f1aaa4a333-X',
     tx_ref:'SNS2_FLW_'+Date.now(),
     amount:7500,currency:'NGN',
     payment_options:'card,ussd,banktransfer',
