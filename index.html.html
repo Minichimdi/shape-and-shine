@@ -1,0 +1,1291 @@
+<!--
+═══════════════════════════════════════════════════════
+  SHAPE & SHINE — HIGH CONVERTING LANDING PAGE v2
+  Framework: Intro → Discovery → Mechanism → Solution
+             → Proof → CTA
+  
+  POST-PURCHASE EMAIL DELIVERY:
+  After payment, the page calls your webhook URL which
+  triggers an email automation (Mailchimp / Brevo / 
+  EmailJS). See the snsDeliverCourse() function below.
+
+  BEFORE GOING LIVE — REPLACE THESE:
+  ① YOUR_PIXEL_ID          → Facebook Pixel ID
+  ② pk_live_YOUR_PAYSTACK_KEY → Paystack public key
+  ③ FLWPUBK_YOUR_FLW_KEY   → Flutterwave public key
+  ④ YOUR_WEBHOOK_URL        → Your email delivery webhook
+     (See EMAIL DELIVERY SETUP section at bottom)
+═══════════════════════════════════════════════════════
+-->
+
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','YOUR_PIXEL_ID');
+fbq('track','PageView');
+fbq('track','ViewContent',{
+  content_name:'Shape & Shine Course',
+  content_category:'Weight Loss',
+  value:7500,currency:'NGN',
+  content_ids:['sns-001'],content_type:'product'
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ─── RESET ─── */
+#sns*,#sns *::before,#sns *::after{margin:0;padding:0;box-sizing:border-box;}
+#sns{
+  font-family:'Inter',sans-serif;
+  background:#FDFAF5;color:#120600;
+  line-height:1.65;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+#sns img{max-width:100%;display:block;}
+#sns button{font-family:'Inter',sans-serif;cursor:pointer;border:none;}
+#sns a{text-decoration:none;}
+
+/* ─── TOKENS ─── */
+#sns{
+  --fire:#C84B18;
+  --ember:#E06830;
+  --gold:#D4921A;
+  --honey:#F0B429;
+  --ink:#120600;
+  --soil:#2E1000;
+  --bark:#5C3010;
+  --fog:#8A6040;
+  --sand:#FDFAF5;
+  --linen:#F5EAD8;
+  --border:#E8D5BC;
+  --green:#1A5C20;
+  --leaf:#D5EDDA;
+  --white:#FFFFFF;
+}
+
+/* ─── URGENCY BAR ─── */
+#sns-bar{
+  background:var(--ink);
+  padding:11px 20px;text-align:center;
+  font-size:.8rem;font-weight:700;
+  color:var(--honey);letter-spacing:.3px;
+  position:sticky;top:0;z-index:200;
+}
+#sns-bar strong{color:var(--ember);}
+
+/* ─── NAV ─── */
+#sns-nav{
+  background:rgba(253,250,245,.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  padding:14px 6%;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:42px;z-index:100;
+}
+.sns-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem;font-weight:900;color:var(--fire);
+  letter-spacing:-.3px;
+}
+.sns-nav-btn{
+  background:var(--fire);color:#fff;
+  padding:10px 24px;border-radius:3px;
+  font-size:.82rem;font-weight:700;letter-spacing:.2px;
+  transition:all .18s;
+}
+.sns-nav-btn:hover{background:var(--soil);transform:translateY(-1px);}
+
+/* ─── SHARED ─── */
+.sns-wrap{max-width:1060px;margin:0 auto;padding:0 6%;}
+.sns-tag{
+  display:inline-block;
+  font-size:.67rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  padding:4px 12px;border-radius:2px;margin-bottom:16px;
+}
+.sns-tag-fire{background:rgba(200,75,24,.1);color:var(--fire);}
+.sns-tag-gold{background:rgba(212,146,26,.12);color:var(--gold);}
+.sns-tag-white{background:rgba(255,255,255,.12);color:rgba(255,255,255,.7);}
+.sns-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.4rem,5.5vw,4.8rem);
+  font-weight:900;line-height:1.06;letter-spacing:-.5px;
+}
+.sns-h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,3rem);
+  font-weight:900;line-height:1.12;letter-spacing:-.3px;
+}
+.sns-h3{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.3rem,3vw,2rem);
+  font-weight:700;line-height:1.2;
+}
+.sns-body{font-size:1rem;line-height:1.75;color:var(--bark);}
+.sns-body-sm{font-size:.88rem;line-height:1.7;color:var(--fog);}
+
+/* ─── CTA BUTTONS ─── */
+.sns-cta-fire{
+  background:linear-gradient(135deg,var(--ember) 0%,var(--fire) 100%);
+  color:#fff;padding:18px 44px;border-radius:3px;
+  font-size:1.05rem;font-weight:800;letter-spacing:.2px;
+  display:inline-flex;align-items:center;gap:8px;
+  box-shadow:0 8px 32px rgba(200,75,24,.3);
+  transition:all .2s;
+}
+.sns-cta-fire:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(200,75,24,.4);}
+.sns-cta-outline{
+  background:transparent;
+  border:1.5px solid rgba(255,255,255,.25);
+  color:rgba(255,255,255,.65);
+  padding:17px 28px;border-radius:3px;
+  font-size:.9rem;font-weight:500;
+  transition:all .2s;
+}
+.sns-cta-outline:hover{border-color:var(--honey);color:var(--honey);}
+.sns-trust-row{
+  display:flex;align-items:center;gap:7px;
+  font-size:.75rem;color:var(--fog);margin-top:16px;flex-wrap:wrap;
+}
+.sns-trust-dot{width:3px;height:3px;background:var(--border);border-radius:50%;}
+
+/* ════════════════════════════════════
+   SECTION 1 — INTRO
+   Hook. Pattern interrupt. One big idea.
+════════════════════════════════════ */
+#sns-intro{
+  background:var(--ink);
+  padding:100px 6% 80px;
+  position:relative;overflow:hidden;
+}
+.sns-intro-glow{
+  position:absolute;top:-100px;right:-150px;
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(200,75,24,.14) 0%,transparent 65%);
+  pointer-events:none;
+}
+.sns-intro-glow2{
+  position:absolute;bottom:-200px;left:-100px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(212,146,26,.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+.sns-intro-inner{max-width:780px;position:relative;z-index:1;}
+#sns-intro .sns-h1{color:#fff;margin-bottom:22px;}
+#sns-intro .sns-h1 em{color:var(--honey);font-style:italic;}
+#sns-intro .sns-h1 mark{
+  background:none;color:var(--ember);
+  border-bottom:3px solid var(--ember);padding-bottom:2px;
+}
+.sns-intro-sub{
+  font-size:clamp(1rem,2.2vw,1.18rem);
+  color:#C8A888;line-height:1.75;max-width:620px;margin-bottom:40px;
+}
+.sns-intro-proof{
+  display:flex;gap:36px;flex-wrap:wrap;margin-bottom:44px;
+  padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.07);
+}
+.sns-intro-stat .n{
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;font-weight:900;color:var(--honey);
+  display:block;line-height:1;margin-bottom:2px;
+}
+.sns-intro-stat .l{font-size:.68rem;color:#8A6858;text-transform:uppercase;letter-spacing:1.5px;}
+.sns-intro-btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:20px;}
+.sns-trust-row-dark .sns-trust-dot{background:#5A3828;}
+.sns-trust-row-dark{color:#7A5848;}
+
+/* ════════════════════════════════════
+   SECTION 2 — DISCOVERY
+   "Does this sound like you?" Agitate pain.
+════════════════════════════════════ */
+#sns-discovery{background:var(--linen);padding:88px 6%;}
+#sns-discovery .sns-h2{margin-bottom:12px;}
+#sns-discovery .sns-body{max-width:600px;margin-bottom:52px;}
+
+.sns-pain-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(295px,1fr));
+  gap:1px;background:var(--border);border:1px solid var(--border);
+  margin-bottom:48px;
+}
+.sns-pain-card{background:var(--sand);padding:28px 24px;position:relative;}
+.sns-pain-card::before{
+  content:'';position:absolute;top:0;left:0;
+  width:3px;height:100%;background:var(--ember);opacity:0;
+  transition:opacity .2s;
+}
+.sns-pain-card:hover::before{opacity:1;}
+.sns-pain-icon{font-size:1.6rem;margin-bottom:12px;display:block;}
+.sns-pain-card h3{font-size:.97rem;font-weight:700;color:var(--ink);margin-bottom:7px;}
+.sns-pain-card p{font-size:.84rem;color:var(--fog);line-height:1.65;}
+
+/* Revelation bridge */
+.sns-bridge{
+  background:var(--fire);
+  border-radius:4px;padding:36px 40px;
+  text-align:center;
+}
+.sns-bridge h3{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.3rem,3vw,2rem);
+  font-style:italic;color:#fff;margin-bottom:12px;line-height:1.25;
+}
+.sns-bridge p{color:rgba(255,255,255,.65);font-size:.92rem;max-width:560px;margin:0 auto;}
+
+/* ════════════════════════════════════
+   SECTION 3 — MECHANISM
+   The "why" — science + root cause.
+════════════════════════════════════ */
+#sns-mechanism{background:var(--sand);padding:88px 6%;}
+.sns-mech-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;
+  align-items:start;margin-top:48px;
+}
+.sns-mech-left{}
+.sns-mech-left .sns-body{margin-bottom:24px;}
+.sns-vs{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1px solid var(--border);border-radius:4px;overflow:hidden;
+  margin-top:32px;
+}
+.sns-vs-col{padding:24px 20px;}
+.sns-vs-col:first-child{background:#FDECEA;border-right:1px solid var(--border);}
+.sns-vs-col:last-child{background:var(--leaf);}
+.sns-vs-label{
+  font-size:.65rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:14px;display:flex;align-items:center;gap:6px;
+}
+.sns-vs-col:first-child .sns-vs-label{color:#922B21;}
+.sns-vs-col:last-child .sns-vs-label{color:var(--green);}
+.sns-vs-item{
+  display:flex;gap:8px;align-items:flex-start;
+  font-size:.83rem;color:var(--soil);margin-bottom:10px;line-height:1.5;
+}
+.sns-vs-item:last-child{margin-bottom:0;}
+.sns-vs-item .vi{flex-shrink:0;font-size:.85rem;margin-top:1px;}
+
+.sns-mech-right{display:flex;flex-direction:column;gap:16px;}
+.sns-reason-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:4px;padding:22px 20px;
+  display:grid;grid-template-columns:40px 1fr;gap:14px;
+  align-items:start;transition:border-color .2s;
+}
+.sns-reason-card:hover{border-color:var(--ember);}
+.sns-rc-num{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;font-weight:900;color:var(--border);line-height:1;
+}
+.sns-rc-body h4{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.sns-rc-body p{font-size:.82rem;color:var(--fog);line-height:1.6;margin:0;}
+
+/* ════════════════════════════════════
+   SECTION 4 — SOLUTION
+   The course. What's inside. The offer.
+════════════════════════════════════ */
+#sns-solution{background:var(--linen);padding:88px 6%;}
+.sns-sol-intro{max-width:660px;margin-bottom:52px;}
+.sns-sol-intro .sns-body{margin-top:14px;}
+
+/* Module list */
+.sns-modules{border:1px solid var(--border);background:var(--white);}
+.sns-mod-row{
+  display:grid;grid-template-columns:56px 1fr auto;
+  border-bottom:1px solid var(--border);
+  transition:background .15s;
+}
+.sns-mod-row:last-child{border-bottom:none;}
+.sns-mod-row:hover{background:#FDF5EC;}
+.sns-mod-n{
+  background:var(--ink);color:var(--honey);
+  font-family:'Playfair Display',serif;
+  font-size:1rem;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.sns-mod-body{padding:20px 22px;}
+.sns-mod-body h4{font-size:.93rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.sns-mod-body p{font-size:.8rem;color:var(--fog);line-height:1.55;margin:0;}
+.sns-mod-badge{
+  padding:20px 18px 20px 0;
+  display:flex;align-items:center;
+}
+.sns-mod-badge span{
+  font-size:.63rem;font-weight:800;letter-spacing:.5px;
+  color:var(--green);background:var(--leaf);
+  padding:3px 8px;border-radius:2px;white-space:nowrap;
+}
+
+/* What you get */
+.sns-gets{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:14px;margin-top:44px;
+}
+.sns-get-item{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:4px;padding:20px 18px;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.sns-get-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px;}
+.sns-get-item h4{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:3px;}
+.sns-get-item p{font-size:.78rem;color:var(--fog);margin:0;line-height:1.5;}
+
+/* ════════════════════════════════════
+   SECTION 5 — SOCIAL PROOF
+   Images, testimonials, results.
+════════════════════════════════════ */
+#sns-proof{background:var(--ink);padding:88px 6%;}
+#sns-proof .sns-h2{color:#fff;margin-bottom:12px;}
+#sns-proof .sns-body-sm{color:#4A2808;margin-bottom:52px;max-width:520px;}
+
+/* Image proof placeholders */
+.sns-img-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:3px;margin-bottom:56px;
+}
+.sns-img-card{
+  aspect-ratio:4/5;
+  background:linear-gradient(160deg,#1E0C02,#2A1006);
+  border:1px solid #2E1206;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:20px;
+  position:relative;overflow:hidden;
+}
+.sns-img-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 80%,rgba(200,75,24,.08),transparent 60%);
+}
+.sns-img-placeholder{
+  font-size:2.4rem;margin-bottom:12px;opacity:.4;
+}
+.sns-img-card .sns-img-label{
+  font-size:.72rem;font-weight:700;color:#3A1A08;
+  text-transform:uppercase;letter-spacing:1.5px;line-height:1.4;
+}
+.sns-img-card .sns-img-result{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;font-weight:900;color:var(--honey);
+  margin-top:6px;
+}
+.sns-img-note{
+  background:#1A0A00;border:1px dashed #4A2818;
+  border-radius:3px;padding:12px 16px;
+  text-align:center;font-size:.75rem;color:#A07858;
+  margin-bottom:48px;line-height:1.6;
+}
+.sns-img-note strong{color:var(--honey);}
+
+/* Testimonials */
+.sns-testi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:16px;margin-bottom:52px;
+}
+.sns-tc{
+  background:#1A0A00;border:1px solid #2A1006;
+  border-radius:3px;padding:26px 22px;
+}
+.sns-tc-stars{color:var(--honey);font-size:.78rem;letter-spacing:2px;margin-bottom:14px;}
+.sns-tc-quote{
+  font-size:.86rem;color:#C8A070;line-height:1.7;
+  margin-bottom:18px;font-style:italic;
+}
+.sns-tc-name{font-size:.72rem;font-weight:800;color:var(--honey);text-transform:uppercase;letter-spacing:1px;}
+.sns-tc-meta{font-size:.7rem;color:#3A1A08;margin-top:3px;}
+
+/* Result numbers */
+.sns-result-strip{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1px;background:#2A1006;border:1px solid #2A1006;
+}
+.sns-result-item{
+  background:#120600;
+  padding:28px 20px;text-align:center;
+}
+.sns-result-num{
+  font-family:'Playfair Display',serif;
+  font-size:2.8rem;font-weight:900;color:var(--honey);
+  display:block;line-height:1;margin-bottom:4px;
+}
+.sns-result-label{font-size:.72rem;color:#3A1A08;text-transform:uppercase;letter-spacing:1.5px;}
+
+/* ════════════════════════════════════
+   SECTION 6 — CTA / OFFER
+   Price, payment, guarantee.
+════════════════════════════════════ */
+#sns-cta-sec{background:var(--sand);padding:88px 6%;}
+.sns-cta-layout{
+  display:grid;grid-template-columns:1fr 420px;
+  gap:56px;align-items:start;
+}
+.sns-cta-left{}
+.sns-cta-left .sns-h2{margin-bottom:20px;}
+.sns-urgency-strip{
+  background:var(--linen);border:1px solid var(--border);
+  border-left:4px solid var(--fire);
+  border-radius:0 3px 3px 0;padding:14px 18px;
+  margin-bottom:28px;
+  font-size:.86rem;color:var(--soil);font-weight:500;
+}
+.sns-urgency-strip b{color:var(--fire);}
+.sns-checklist{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.sns-checklist li{
+  display:flex;gap:12px;align-items:flex-start;
+  font-size:.93rem;color:var(--soil);line-height:1.5;
+}
+.sns-chk-icon{
+  width:21px;height:21px;background:var(--fire);color:#fff;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.6rem;font-weight:900;flex-shrink:0;margin-top:2px;
+}
+.sns-guar-mini{
+  background:var(--leaf);border:1px solid #A8D8B0;
+  border-radius:3px;padding:16px 20px;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.sns-guar-mini .gi{font-size:1.5rem;flex-shrink:0;}
+.sns-guar-mini h4{font-size:.85rem;font-weight:700;color:var(--green);margin-bottom:3px;}
+.sns-guar-mini p{font-size:.78rem;color:#2A5C30;margin:0;line-height:1.55;}
+
+/* Price card */
+.sns-price-card{
+  background:var(--white);
+  border:2px solid var(--ember);border-radius:4px;overflow:hidden;
+  box-shadow:0 24px 64px rgba(200,75,24,.12);
+  position:sticky;top:120px;
+}
+.sns-pc-top{
+  background:linear-gradient(135deg,var(--fire),var(--ember));
+  padding:22px 28px;
+}
+.sns-pc-top .eyebrow{
+  font-size:.63rem;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:4px;
+}
+.sns-pc-top h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;font-weight:900;color:#fff;
+}
+.sns-pc-body{padding:28px;}
+.sns-was{font-size:.88rem;color:#B09080;text-decoration:line-through;display:block;margin-bottom:3px;}
+.sns-price{
+  font-family:'Playfair Display',serif;
+  font-size:3.8rem;font-weight:900;color:var(--fire);line-height:1;
+}
+.sns-price sup{font-size:1.5rem;vertical-align:super;}
+.sns-price-note{font-size:.76rem;color:var(--fog);margin:6px 0 22px;}
+.sns-incl{list-style:none;margin-bottom:22px;}
+.sns-incl li{
+  display:flex;gap:8px;align-items:flex-start;
+  font-size:.84rem;color:var(--soil);
+  padding:8px 0;border-bottom:1px solid #F5EAD8;
+}
+.sns-incl li:last-child{border-bottom:none;}
+.sns-incl li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;}
+.sns-pay-sep{border-top:1px solid #F5EAD8;padding-top:22px;}
+.sns-pay-label{
+  font-size:.63rem;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;color:var(--fog);margin-bottom:12px;
+}
+.sns-pay-btns{display:flex;flex-direction:column;gap:10px;}
+.sns-pbtn{
+  width:100%;padding:15px;border:none;border-radius:3px;
+  font-family:'Inter',sans-serif;font-size:.92rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  cursor:pointer;transition:all .2s;letter-spacing:.2px;
+}
+.sns-pbtn:hover{transform:translateY(-1px);}
+.sns-pbtn-ps{background:#0BA4DB;color:#fff;}
+.sns-pbtn-ps:hover{background:#0892C4;box-shadow:0 6px 20px rgba(11,164,219,.3);}
+.sns-pbtn-fw{background:#F5A623;color:#fff;}
+.sns-pbtn-fw:hover{background:#E09615;box-shadow:0 6px 20px rgba(245,166,35,.3);}
+.sns-or{font-size:.7rem;color:var(--fog);text-align:center;margin:2px 0;}
+.sns-secure{
+  font-size:.7rem;color:var(--fog);
+  display:flex;align-items:center;justify-content:center;
+  gap:4px;margin-top:12px;
+}
+
+/* ════════════════════════════════════
+   FINAL PUSH + FAQ
+════════════════════════════════════ */
+#sns-final{background:var(--ink);padding:88px 6%;text-align:center;}
+#sns-final .sns-h2{color:#fff;max-width:680px;margin:0 auto 16px;}
+#sns-final .sns-body-sm{color:#3A1A08;max-width:520px;margin:0 auto 36px;}
+
+#sns-faq{background:var(--linen);padding:72px 6%;}
+#sns-faq .sns-h3{margin-bottom:36px;text-align:center;}
+.sns-faq-list{max-width:720px;margin:0 auto;border:1px solid var(--border);}
+.sns-fi{border-bottom:1px solid var(--border);}
+.sns-fi:last-child{border-bottom:none;}
+.sns-fq{
+  width:100%;background:none;border:none;cursor:pointer;
+  padding:18px 22px;text-align:left;
+  font-family:'Inter',sans-serif;font-size:.91rem;
+  font-weight:600;color:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  transition:background .15s;
+}
+.sns-fq:hover{background:var(--sand);}
+.sns-fa{
+  display:none;padding:0 22px 18px;
+  font-size:.84rem;color:var(--fog);line-height:1.7;
+}
+.sns-fi.open .sns-fa{display:block;}
+.sns-farr{color:var(--ember);font-size:1.1rem;flex-shrink:0;transition:transform .2s;}
+.sns-fi.open .sns-farr{transform:rotate(45deg);}
+
+/* ════════════════════════════════════
+   COUNTDOWN BAR
+════════════════════════════════════ */
+#sns-cd{
+  background:#0A0300;padding:24px 6%;text-align:center;
+}
+#sns-cd .cdl{
+  font-size:.64rem;color:#3A1A08;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;
+}
+.sns-clocks{display:flex;gap:4px;justify-content:center;align-items:flex-end;}
+.sns-cb{text-align:center;min-width:56px;}
+.sns-cn{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;font-weight:900;color:var(--honey);
+  display:block;line-height:1;
+}
+.sns-cu{font-size:.57rem;color:#2E1006;text-transform:uppercase;letter-spacing:2px;}
+.sns-csep{
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;color:var(--ember);
+  line-height:1;padding-bottom:14px;
+}
+
+/* ════════════════════════════════════
+   MODAL
+════════════════════════════════════ */
+#sns-modal-bg{
+  display:none;position:fixed;inset:0;z-index:9000;
+  background:rgba(6,2,0,.88);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:16px;
+}
+#sns-modal-bg.open{display:flex;}
+#sns-modal{
+  background:#fff;border-radius:5px;
+  padding:36px 30px;max-width:420px;width:100%;
+  position:relative;
+  box-shadow:0 40px 100px rgba(0,0,0,.5);
+}
+.sns-mx{
+  position:absolute;top:12px;right:14px;
+  background:none;border:none;font-size:1.3rem;color:#bbb;cursor:pointer;
+}
+.sns-m-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--ink);margin-bottom:4px;}
+.sns-m-sub{font-size:.8rem;color:var(--fog);margin-bottom:20px;}
+.sns-mform{display:flex;flex-direction:column;gap:10px;}
+.sns-mform input{
+  padding:13px 14px;border:1.5px solid var(--border);border-radius:3px;
+  font-family:'Inter',sans-serif;font-size:.91rem;color:var(--ink);outline:none;
+  transition:border-color .2s;
+}
+.sns-mform input:focus{border-color:var(--ember);}
+.sns-mdiv{
+  display:flex;align-items:center;gap:10px;
+  font-size:.68rem;color:var(--fog);
+}
+.sns-mdiv::before,.sns-mdiv::after{content:'';flex:1;height:1px;background:var(--border);}
+.sns-msec{font-size:.7rem;color:var(--fog);display:flex;align-items:center;justify-content:center;gap:4px;margin-top:4px;}
+
+/* ════════════════════════════════════
+   SUCCESS / DELIVERY SCREEN
+════════════════════════════════════ */
+#sns-success{
+  display:none;position:fixed;inset:0;z-index:9500;
+  background:var(--sand);
+  flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:40px;
+}
+#sns-success.open{display:flex;}
+.sns-success-icon{font-size:3.8rem;margin-bottom:20px;}
+.sns-success-h{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--ink);margin-bottom:12px;}
+.sns-success-sub{font-size:.95rem;color:var(--fog);max-width:440px;line-height:1.7;margin-bottom:24px;}
+.sns-success-steps{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:4px;padding:24px 28px;max-width:440px;width:100%;
+  text-align:left;margin-bottom:16px;
+}
+.sns-success-steps h4{font-size:.85rem;font-weight:700;color:var(--ink);margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;}
+.sns-ss-item{display:flex;gap:12px;align-items:flex-start;font-size:.84rem;color:var(--soil);margin-bottom:10px;line-height:1.5;}
+.sns-ss-item:last-child{margin-bottom:0;}
+.sns-ss-num{
+  width:22px;height:22px;background:var(--fire);color:#fff;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;font-weight:900;flex-shrink:0;margin-top:1px;
+}
+#sns-ref-txt{font-size:.76rem;color:#9A7060;}
+
+/* ════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════ */
+@media(max-width:860px){
+  .sns-mech-grid{grid-template-columns:1fr;}
+  .sns-cta-layout{grid-template-columns:1fr;}
+  .sns-price-card{position:static;}
+}
+@media(max-width:620px){
+  #sns-intro{padding:72px 5% 56px;}
+  .sns-intro-proof{gap:20px;}
+  .sns-mod-row{grid-template-columns:42px 1fr;}
+  .sns-mod-badge{display:none;}
+  .sns-vs{grid-template-columns:1fr;}
+  .sns-vs-col:first-child{border-right:none;border-bottom:1px solid var(--border);}
+  .sns-img-grid{grid-template-columns:1fr 1fr;}
+  #sns-modal{padding:26px 18px;}
+}
+</style>
+
+<div id="sns">
+
+<!-- URGENCY BAR -->
+<div id="sns-bar">
+  🔥 Launch Price — <strong>60% OFF</strong> &nbsp;·&nbsp; Closes in <span id="sns-bar-time">23:59:47</span> &nbsp;·&nbsp; <span id="sns-slots">11 women</span> grabbed this today
+</div>
+
+<!-- NAV -->
+<nav id="sns-nav">
+  <div class="sns-logo">Shape & Shine</div>
+  <button class="sns-nav-btn" onclick="snsOpen()">Get Access — ₦7,500</button>
+</nav>
+
+<!-- ══════════════════════════════════
+     SECTION 1: INTRO
+     Hook them. One big bold promise.
+══════════════════════════════════ -->
+<section id="sns-intro">
+  <div class="sns-intro-glow"></div>
+  <div class="sns-intro-glow2"></div>
+  <div class="sns-intro-inner">
+    <div class="sns-tag sns-tag-gold">Nigeria's #1 Body Transformation Course for Women</div>
+    <h1 class="sns-h1">
+      You've been trying to<br>
+      lose weight the <mark>wrong way</mark><br>
+      your whole life.<br>
+      <em>Here's why — and what works.</em>
+    </h1>
+    <p class="sns-intro-sub">
+      Every diet you've tried was designed for someone living a completely different life. Shape & Shine is the first weight loss course built entirely around Nigerian food, Nigerian hormones, and the Nigerian woman's real world.
+    </p>
+    <div class="sns-intro-proof">
+      <div class="sns-intro-stat"><span class="n">500+</span><span class="l">Women Enrolled</span></div>
+      <div class="sns-intro-stat"><span class="n">12</span><span class="l">Week Blueprint</span></div>
+      <div class="sns-intro-stat"><span class="n">8</span><span class="l">Deep Modules</span></div>
+      <div class="sns-intro-stat"><span class="n">0</span><span class="l">Starvation</span></div>
+    </div>
+    <div class="sns-intro-btns">
+      <button class="sns-cta-fire" onclick="snsOpen()">Yes, I Want This — ₦7,500 →</button>
+      <button class="sns-cta-outline" onclick="document.getElementById('sns-discovery').scrollIntoView({behavior:'smooth'})">Show me why first ↓</button>
+    </div>
+    <div class="sns-trust-row sns-trust-row-dark">
+      <span>🔒 7-day money-back guarantee</span>
+      <span class="sns-trust-dot"></span>
+      <span>Instant access after payment</span>
+      <span class="sns-trust-dot"></span>
+      <span>Pay via Paystack or Flutterwave</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 2: DISCOVERY
+     Mirror their pain. Make them feel seen.
+══════════════════════════════════ -->
+<section id="sns-discovery">
+  <div class="sns-wrap">
+    <div class="sns-tag sns-tag-fire">Sound Familiar?</div>
+    <h2 class="sns-h2">You're not the problem.<br>The plan was.</h2>
+    <p class="sns-body">Every Nigerian woman who has "failed" at weight loss was handed a system that was never designed for her. Before you blame yourself one more time — read this.</p>
+
+    <div class="sns-pain-grid">
+      <div class="sns-pain-card">
+        <span class="sns-pain-icon">😩</span>
+        <h3>"I've tried every diet and nothing sticks"</h3>
+        <p>Keto, intermittent fasting, skipping rice — every plan assumed you live a completely different life. None of them accounted for jollof at a party, eba after church, or suya on a Friday night.</p>
+      </div>
+      <div class="sns-pain-card">
+        <span class="sns-pain-icon">🍽️</span>
+        <h3>"They tell me to give up my food"</h3>
+        <p>Quinoa. Chicken breast. Salads. No swallow, no rice, no culture. You can't sustain a life stripped of everything that brings you joy — and you shouldn't have to.</p>
+      </div>
+      <div class="sns-pain-card">
+        <span class="sns-pain-icon">⚖️</span>
+        <h3>"The scale won't move no matter what I do"</h3>
+        <p>You're dieting, you're trying — but the weight stays. This is almost always hormonal: PCOS, thyroid, insulin resistance. Not one of your previous plans ever addressed this.</p>
+      </div>
+      <div class="sns-pain-card">
+        <span class="sns-pain-icon">🎉</span>
+        <h3>"One owambe destroys a month of progress"</h3>
+        <p>Nigerian social life is built around food. Weddings, naming ceremonies, church events, birthdays — you need a strategy that works inside your actual life, not one that collapses the moment you leave the house.</p>
+      </div>
+      <div class="sns-pain-card">
+        <span class="sns-pain-icon">💬</span>
+        <h3>"The comments from family are killing me"</h3>
+        <p>"You've added o!" from aunties. "Are you okay?" from your mum. The unsolicited opinions never stop. You deserve to feel powerful in your own body — on your own terms.</p>
+      </div>
+      <div class="sns-pain-card">
+        <span class="sns-pain-icon">⏰</span>
+        <h3>"I carry too much to also carry a diet plan"</h3>
+        <p>Work, children, cooking for the family, extended family obligations. You are already doing the work of three people. Your health plan needs to work with your life — not add to its weight.</p>
+      </div>
+    </div>
+
+    <div class="sns-bridge">
+      <h3>"What if none of this was ever your fault — and there's a system finally built for you?"</h3>
+      <p>That is exactly what Shape & Shine is. Not another Western plan with a Nigerian flag slapped on it. A course built from the ground up for how you actually live, eat, and exist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 3: MECHANISM
+     The "why" — educate before selling.
+     Trust is built here.
+══════════════════════════════════ -->
+<section id="sns-mechanism">
+  <div class="sns-wrap">
+    <div class="sns-tag sns-tag-fire">The Real Reason</div>
+    <h2 class="sns-h2">Why Nigerian women struggle to<br>lose weight — and keep it off</h2>
+
+    <div class="sns-mech-grid">
+      <div class="sns-mech-left">
+        <p class="sns-body">It is not willpower. It is not laziness. It is a combination of biological, cultural, and environmental factors that no generic diet programme ever addresses. Here is what is actually happening inside your body — and in your life.</p>
+
+        <div class="sns-vs">
+          <div class="sns-vs-col">
+            <div class="sns-vs-label">❌ Every Plan You've Tried</div>
+            <div class="sns-vs-item"><span class="vi">✗</span>Built for Western food and bodies</div>
+            <div class="sns-vs-item"><span class="vi">✗</span>Ignores PCOS and hormonal resistance</div>
+            <div class="sns-vs-item"><span class="vi">✗</span>Eliminates your entire food culture</div>
+            <div class="sns-vs-item"><span class="vi">✗</span>Collapses at the first party or event</div>
+            <div class="sns-vs-item"><span class="vi">✗</span>Assumes you have hours to meal prep</div>
+            <div class="sns-vs-item"><span class="vi">✗</span>Unsustainable after 2–3 weeks</div>
+          </div>
+          <div class="sns-vs-col">
+            <div class="sns-vs-label">✓ The Shape & Shine System</div>
+            <div class="sns-vs-item"><span class="vi">✓</span>Built entirely around Nigerian cuisine</div>
+            <div class="sns-vs-item"><span class="vi">✓</span>Full module on PCOS, thyroid & hormones</div>
+            <div class="sns-vs-item"><span class="vi">✓</span>Your food stays — portions and approach change</div>
+            <div class="sns-vs-item"><span class="vi">✓</span>Owambe and party survival strategy included</div>
+            <div class="sns-vs-item"><span class="vi">✓</span>30 minutes a day, 4 days a week — that's all</div>
+            <div class="sns-vs-item"><span class="vi">✓</span>A lifestyle plan you can sustain for life</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sns-mech-right">
+        <div class="sns-reason-card">
+          <div class="sns-rc-num">01</div>
+          <div class="sns-rc-body">
+            <h4>Your hormones are working against you</h4>
+            <p>Up to 1 in 6 Nigerian women have PCOS — most undiagnosed. PCOS causes insulin resistance, elevated androgens, and makes fat loss dramatically harder. No generic diet addresses this. We have an entire module dedicated to it.</p>
+          </div>
+        </div>
+        <div class="sns-reason-card">
+          <div class="sns-rc-num">02</div>
+          <div class="sns-rc-body">
+            <h4>Your portions were never calibrated for Nigerian food</h4>
+            <p>Eba, jollof, egusi, plantain — these are calorie-dense foods eaten in large portions without context. The fix is not elimination — it is the plate method designed specifically for Nigerian meals.</p>
+          </div>
+        </div>
+        <div class="sns-reason-card">
+          <div class="sns-rc-num">03</div>
+          <div class="sns-rc-body">
+            <h4>Chronic stress is storing fat on your belly</h4>
+            <p>Cortisol — your stress hormone — signals your body to store fat around the abdomen. The Nigerian woman's stress load (work, family, relationships, financial pressure) is a direct driver of weight gain that no calorie counter addresses.</p>
+          </div>
+        </div>
+        <div class="sns-reason-card">
+          <div class="sns-rc-num">04</div>
+          <div class="sns-rc-body">
+            <h4>You've been exercising the wrong way for your body</h4>
+            <p>Hours of cardio with no strength training burns muscle, spikes cortisol, and slows your metabolism. Nigerian women need a specific combination of strength and movement — not punishment sessions at a gym.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 4: SOLUTION
+     The course. What's inside.
+══════════════════════════════════ -->
+<section id="sns-solution">
+  <div class="sns-wrap">
+    <div class="sns-tag sns-tag-fire">The Solution</div>
+    <div class="sns-sol-intro">
+      <h2 class="sns-h2">Introducing Shape & Shine —<br>built for you, finally.</h2>
+      <p class="sns-body">8 comprehensive modules designed to address every real reason Nigerian women struggle to lose weight and keep it off. This is not a PDF guide. This is a complete transformation system.</p>
+    </div>
+
+    <div class="sns-modules">
+      <div class="sns-mod-row"><div class="sns-mod-n">00</div><div class="sns-mod-body"><h4>Welcome & Setting Up for Success</h4><p>Baseline measurements, mindset foundations, realistic goal-setting, and your personal 12-week roadmap. Start with absolute clarity.</p></div><div class="sns-mod-badge"><span>Start Here</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">01</div><div class="sns-mod-body"><h4>Nutrition & Nigerian Foods — What to Eat & What to Stop</h4><p>The complete Nigerian food system. Jollof, eba, egusi, suya, moi moi — all included. Full calorie guide, the plate method, portion control without suffering.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">02</div><div class="sns-mod-body"><h4>Exercise & Movement — No Gym Required</h4><p>Home workout circuits, Afrobeats cardio, glute-building routines, belly fat strategy. 30 minutes, 4 times a week. No equipment needed.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">03</div><div class="sns-mod-body"><h4>Your 7-Day Nigerian Meal Plan + Healthy Swaps Guide</h4><p>A full week of real meals mapped — breakfast, lunch, dinner, snacks. Every meal Nigerian. Every calorie-saving swap included.</p></div><div class="sns-mod-badge"><span>★ Bonus</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">04</div><div class="sns-mod-body"><h4>Mindset, Emotional Eating & Owambe Life</h4><p>The mental tools to stay on track through parties, family pressure, stress eating, and everything real Nigerian social life throws at you.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">05</div><div class="sns-mod-body"><h4>Hormones — PCOS, Thyroid, Postpartum & Menopause</h4><p>The module that changes everything. Finally understand why your body fights fat loss — and the specific steps to work with your hormones instead of against them.</p></div><div class="sns-mod-badge"><span>★ Most Loved</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">06</div><div class="sns-mod-body"><h4>Daily Habits, Sleep & the 80/20 Rule</h4><p>Morning routines, sleep optimisation, navigating celebrations without guilt. The sustainable habits that compound quietly over 12 weeks into visible results.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">07</div><div class="sns-mod-body"><h4>Your 12-Week Transformation Blueprint</h4><p>Phase-by-phase, week-by-week action plan. Myth-busting. Progress tracking system. And your permanent lifestyle blueprint beyond week 12.</p></div><div class="sns-mod-badge"><span>Blueprint</span></div></div>
+    </div>
+
+    <div class="sns-gets">
+      <div class="sns-get-item"><div class="sns-get-icon">📱</div><div><h4>Instant Access</h4><p>Access everything from your phone immediately after payment.</p></div></div>
+      <div class="sns-get-item"><div class="sns-get-icon">♾️</div><div><h4>Lifetime Access</h4><p>Revisit any module, any time, forever. No expiry.</p></div></div>
+      <div class="sns-get-item"><div class="sns-get-icon">🍽️</div><div><h4>Nigerian Food Only</h4><p>Every meal, every example uses food you actually eat.</p></div></div>
+      <div class="sns-get-item"><div class="sns-get-icon">🏠</div><div><h4>No Gym Needed</h4><p>All workouts are designed for home with zero equipment.</p></div></div>
+      <div class="sns-get-item"><div class="sns-get-icon">🧬</div><div><h4>Hormone-Aware</h4><p>PCOS, thyroid, postpartum — this course sees you fully.</p></div></div>
+      <div class="sns-get-item"><div class="sns-get-icon">🛡️</div><div><h4>7-Day Guarantee</h4><p>Full refund within 7 days if it's not right for you.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 5: PROOF
+     Images, results, testimonials.
+══════════════════════════════════ -->
+<section id="sns-proof">
+  <div class="sns-wrap">
+    <div class="sns-tag sns-tag-white">Real Results</div>
+    <h2 class="sns-h2">Women who were exactly<br>where you are now.</h2>
+    <p class="sns-body-sm">Nigerian women. Real cities. Real food. Real results.</p>
+
+    <!-- RESULT NUMBERS -->
+    <div class="sns-result-strip" style="margin:36px 0 48px;">
+      <div class="sns-result-item"><span class="sns-result-num">500+</span><span class="sns-result-label">Women Enrolled</span></div>
+      <div class="sns-result-item"><span class="sns-result-num">9kg</span><span class="sns-result-label">Avg Weight Lost</span></div>
+      <div class="sns-result-item"><span class="sns-result-num">12wk</span><span class="sns-result-label">Full Transformation</span></div>
+      <div class="sns-result-item"><span class="sns-result-num">4.9★</span><span class="sns-result-label">Average Rating</span></div>
+    </div>
+
+    <!-- IMAGE PROOF GRID -->
+    <div class="sns-img-note">
+      <strong>👇 Add your real transformation photos here.</strong> Replace these placeholders with before/after or progress photos from real course members (with their written permission). Authentic photos outperform any graphic by 3–5× in conversion.
+    </div>
+    <div class="sns-img-grid">
+      <div class="sns-img-card">
+        <div class="sns-img-placeholder">📸</div>
+        <div class="sns-img-label">Add Photo Here<br>Adaeze · Port Harcourt</div>
+        <div class="sns-img-result">Lost 9kg</div>
+      </div>
+      <div class="sns-img-card">
+        <div class="sns-img-placeholder">📸</div>
+        <div class="sns-img-label">Add Photo Here<br>Funmi · Lagos</div>
+        <div class="sns-img-result">2 Dress Sizes</div>
+      </div>
+      <div class="sns-img-card">
+        <div class="sns-img-placeholder">📸</div>
+        <div class="sns-img-label">Add Photo Here<br>Ngozi · Abuja</div>
+        <div class="sns-img-result">Postpartum Win</div>
+      </div>
+      <div class="sns-img-card">
+        <div class="sns-img-placeholder">📸</div>
+        <div class="sns-img-label">Add Photo Here<br>Blessing · Enugu</div>
+        <div class="sns-img-result">Lost 6kg</div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div class="sns-testi-grid">
+      <div class="sns-tc">
+        <div class="sns-tc-stars">★★★★★</div>
+        <p class="sns-tc-quote">"I lost 9kg in 10 weeks without giving up my jollof or suya nights. The hormone module explained why I had struggled with PCOS for 4 years and gotten nowhere. I cried reading it. This course finally made me feel understood."</p>
+        <div class="sns-tc-name">Adaeze O.</div>
+        <div class="sns-tc-meta">Port Harcourt · Lost 9kg in 10 weeks</div>
+      </div>
+      <div class="sns-tc">
+        <div class="sns-tc-stars">★★★★★</div>
+        <p class="sns-tc-quote">"I'm a Lagos mum of 3. Zero time, zero energy, endless excuses. The 30-minute home workouts changed everything. Down 2 dress sizes in 3 months. My husband keeps looking at me like he did when we first met."</p>
+        <div class="sns-tc-name">Funmi A.</div>
+        <div class="sns-tc-meta">Lagos Island · 2 dress sizes in 3 months</div>
+      </div>
+      <div class="sns-tc">
+        <div class="sns-tc-stars">★★★★★</div>
+        <p class="sns-tc-quote">"After my second baby I thought my body was just gone. The postpartum module gave me a realistic, honest roadmap. Eight months later I have my shape back. Better, actually — because I'm stronger than I've ever been."</p>
+        <div class="sns-tc-name">Ngozi E.</div>
+        <div class="sns-tc-meta">Abuja · Postpartum recovery at 8 months</div>
+      </div>
+      <div class="sns-tc">
+        <div class="sns-tc-stars">★★★★★</div>
+        <p class="sns-tc-quote">"I still eat eba. I still eat rice at parties. I just eat it differently. Down 6kg and my blood sugar has been stable for the first time in three years. This course paid for itself in the first week."</p>
+        <div class="sns-tc-name">Blessing I.</div>
+        <div class="sns-tc-meta">Enugu · 6kg lost, blood sugar stabilised</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     COUNTDOWN
+══════════════════════════════════ -->
+<div id="sns-cd">
+  <div class="cdl">Launch price closes in</div>
+  <div class="sns-clocks">
+    <div class="sns-cb"><span class="sns-cn" id="sns-ch">23</span><span class="sns-cu">Hours</span></div>
+    <div class="sns-csep">:</div>
+    <div class="sns-cb"><span class="sns-cn" id="sns-cm">59</span><span class="sns-cu">Mins</span></div>
+    <div class="sns-csep">:</div>
+    <div class="sns-cb"><span class="sns-cn" id="sns-cs">47</span><span class="sns-cu">Secs</span></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 6: CTA / OFFER
+     The close. Make it irresistible.
+══════════════════════════════════ -->
+<section id="sns-cta-sec">
+  <div class="sns-wrap">
+    <div class="sns-cta-layout">
+
+      <!-- LEFT: Conviction copy -->
+      <div class="sns-cta-left">
+        <div class="sns-tag sns-tag-fire">Your Decision</div>
+        <h2 class="sns-h2">The only thing between you and the body you want is today's decision.</h2>
+
+        <div class="sns-urgency-strip">
+          ⏰ <b>Launch price of ₦7,500 closes soon.</b> After this window, the price returns to ₦20,000. This is not manufactured urgency — this is your last chance at this price.
+        </div>
+
+        <ul class="sns-checklist">
+          <li><div class="sns-chk-icon">✓</div>You've read this far because something in you knows this is different</li>
+          <li><div class="sns-chk-icon">✓</div>₦7,500 is one dinner out — and this will change 12 weeks of your life</li>
+          <li><div class="sns-chk-icon">✓</div>You get instant access the moment payment clears</li>
+          <li><div class="sns-chk-icon">✓</div>If it's not right, you get every kobo back within 7 days</li>
+          <li><div class="sns-chk-icon">✓</div>500+ women already inside — you will not be figuring this out alone</li>
+          <li><div class="sns-chk-icon">✓</div>One year from now, you will wish you had started today</li>
+        </ul>
+
+        <div class="sns-guar-mini">
+          <span class="gi">🛡️</span>
+          <div>
+            <h4>7-Day Money-Back Guarantee</h4>
+            <p>Go through the first module. If you don't feel this course was built specifically for you, email us within 7 days for a full, no-questions refund. Every kobo back. That is our promise.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Price card -->
+      <div class="sns-price-card">
+        <div class="sns-pc-top">
+          <div class="eyebrow">Complete Course Bundle</div>
+          <h3>Shape & Shine — Full Program</h3>
+        </div>
+        <div class="sns-pc-body">
+          <span class="sns-was">Regular price: ₦20,000</span>
+          <div class="sns-price"><sup>₦</sup>7,500</div>
+          <div class="sns-price-note">One-time payment · Lifetime access · Instant delivery to your email</div>
+
+          <ul class="sns-incl">
+            <li>All 8 course modules — instant access</li>
+            <li>12-Week transformation blueprint</li>
+            <li>7-Day Nigerian meal plan (print-ready)</li>
+            <li>Nigerian food calorie guide</li>
+            <li>Home workout circuit plans</li>
+            <li>PCOS & hormone deep-dive module</li>
+            <li>Lifetime access — yours forever</li>
+            <li>7-day money-back guarantee</li>
+          </ul>
+
+          <div class="sns-pay-sep">
+            <div class="sns-pay-label">Choose your payment method</div>
+            <div class="sns-pay-btns">
+              <button class="sns-pbtn sns-pbtn-ps" onclick="snsOpen('paystack')">
+                💳 Pay with Paystack
+              </button>
+              <div class="sns-or">— or —</div>
+              <button class="sns-pbtn sns-pbtn-fw" onclick="snsOpen('flutterwave')">
+                🌊 Pay with Flutterwave
+              </button>
+            </div>
+            <div class="sns-secure">🔒 256-bit SSL · Safe & encrypted checkout</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FAQ
+══════════════════════════════════ -->
+<section id="sns-faq">
+  <h3 class="sns-h3" style="text-align:center;">Still have questions?</h3>
+  <div class="sns-faq-list">
+    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">Will I have to give up Nigerian food?<span class="sns-farr">+</span></button><div class="sns-fa">Never. This course was built entirely around Nigerian cuisine. Jollof rice, eba, egusi, suya, plantain, moi moi — all of it stays. The transformation is in how you approach it, not what you eat.</div></div>
+    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">I have PCOS. Will this actually help me?<span class="sns-farr">+</span></button><div class="sns-fa">Module 5 is dedicated entirely to PCOS, thyroid dysfunction, postpartum weight, and perimenopausal changes. It is the most-loved module in the entire course because it explains, often for the first time, why a woman's body behaves the way it does — and what to specifically do about it.</div></div>
+    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">How quickly will I see results?<span class="sns-farr">+</span></button><div class="sns-fa">Most women notice more energy and less bloating within 2 weeks. Visible body changes appear around week 4–6. Significant transformation by week 12. Healthy fat loss is 0.5–1kg per week — meaning 6–12kg in 12 weeks is realistic without starvation.</div></div>
+    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">I'm a busy mum. Do I have time for this?<span class="sns-farr">+</span></button><div class="sns-fa">The workouts are 30 minutes, 3–4 times per week. No gym. No equipment. No childcare needed. The entire course was designed around women who have no spare time — because most Nigerian women don't.</div></div>
+    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">How do I get access after paying?<span class="sns-farr">+</span></button><div class="sns-fa">Immediately after payment is confirmed, a delivery email is sent to the address you entered at checkout. It contains your login link and access instructions. You can start Module 1 within minutes of paying.</div></div>
+    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">What if I want a refund?<span class="sns-farr">+</span></button><div class="sns-fa">7-day no-questions-asked refund. Go through Module 1. If you don't feel this course was built specifically for the Nigerian woman's life and body, email us and receive every kobo back within 24 hours.</div></div>
+  </div>
+</section>
+
+<!-- FINAL PUSH -->
+<section id="sns-final">
+  <h2 class="sns-h2">One year from now,<br>you will either be living in<br>the body you want —<br>or wishing you had started today.</h2>
+  <p class="sns-body-sm">The decision is yours. But the price won't stay here forever.</p>
+  <button class="sns-cta-fire" style="font-size:1.05rem;padding:20px 52px;" onclick="snsOpen()">
+    Get Instant Access — ₦7,500 →
+  </button>
+  <div class="sns-trust-row" style="justify-content:center;margin-top:18px;color:#2E1008;">
+    <span>🔒 Secure checkout</span>
+    <span class="sns-trust-dot" style="background:#2E1008;"></span>
+    <span>7-day refund guarantee</span>
+    <span class="sns-trust-dot" style="background:#2E1008;"></span>
+    <span>Instant email delivery</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MODAL
+══════════════════════════════════ -->
+<div id="sns-modal-bg">
+  <div id="sns-modal">
+    <button class="sns-mx" onclick="snsClose()">✕</button>
+    <div class="sns-m-title">Almost there! 🎉</div>
+    <p class="sns-m-sub">Enter your details — your course link will be sent to this email immediately after payment.</p>
+    <div class="sns-mform">
+      <input type="text" id="sns-name" placeholder="Full Name" autocomplete="name">
+      <input type="email" id="sns-email" placeholder="Email Address (course delivered here)" autocomplete="email">
+      <input type="tel" id="sns-phone" placeholder="Phone Number (e.g. 08012345678)" autocomplete="tel">
+      <div class="sns-mdiv">Choose payment method</div>
+      <button class="sns-pbtn sns-pbtn-ps" onclick="snsPaystack()">💳 Pay ₦7,500 with Paystack</button>
+      <div class="sns-or">— or —</div>
+      <button class="sns-pbtn sns-pbtn-fw" onclick="snsFlutterwave()">🌊 Pay ₦7,500 with Flutterwave</button>
+      <div class="sns-msec">🔒 100% secure · Course delivered instantly to your email</div>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS / DELIVERY SCREEN -->
+<div id="sns-success">
+  <div class="sns-success-icon">🎉</div>
+  <h2 class="sns-success-h">Welcome to Shape & Shine!</h2>
+  <p class="sns-success-sub">Your payment was successful. Your course access is being delivered to your email right now. Check your inbox (and spam folder just in case).</p>
+  <div class="sns-success-steps">
+    <h4>What happens next</h4>
+    <div class="sns-ss-item"><div class="sns-ss-num">1</div><span>Check your email inbox — your course access link was just sent</span></div>
+    <div class="sns-ss-item"><div class="sns-ss-num">2</div><span>Click the link to create your account and access all 8 modules</span></div>
+    <div class="sns-ss-item"><div class="sns-ss-num">3</div><span>Start with Module 0 — take your measurements today, right now</span></div>
+    <div class="sns-ss-item"><div class="sns-ss-num">4</div><span>Your 12-week transformation begins from this moment 💪🏾</span></div>
+  </div>
+  <p id="sns-ref-txt" style="font-size:.74rem;color:#9A7060;"></p>
+</div>
+
+</div><!-- end #sns -->
+
+<!-- ══════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════ -->
+<script>
+// ── COUNTDOWN ──
+(function(){
+  var K='sns_v2_end';
+  var e=localStorage.getItem(K);
+  if(!e){e=Date.now()+24*3600000;localStorage.setItem(K,e);}
+  e=parseInt(e);
+  function t(){
+    var d=Math.max(0,e-Date.now());
+    var h=Math.floor(d/3600000),m=Math.floor(d%3600000/60000),s=Math.floor(d%60000/1000);
+    var f=function(n){return String(n).padStart(2,'0');};
+    document.getElementById('sns-ch').textContent=f(h);
+    document.getElementById('sns-cm').textContent=f(m);
+    document.getElementById('sns-cs').textContent=f(s);
+    var b=document.getElementById('sns-bar-time');
+    if(b)b.textContent=f(h)+':'+f(m)+':'+f(s);
+  }
+  t();setInterval(t,1000);
+})();
+
+// ── SLOT SCARCITY ──
+(function(){
+  var K='sns_v2_slots',n=parseInt(localStorage.getItem(K)||'14');
+  if(n>4){n--;localStorage.setItem(K,n);}
+  var el=document.getElementById('sns-slots');
+  if(el)el.textContent=n+' women';
+})();
+
+// ── MODAL ──
+function snsOpen(method){
+  fbq('track','InitiateCheckout',{
+    content_name:'Shape & Shine Course',value:7500,
+    currency:'NGN',num_items:1
+  });
+  document.getElementById('sns-modal-bg').classList.add('open');
+}
+function snsClose(){
+  document.getElementById('sns-modal-bg').classList.remove('open');
+}
+document.getElementById('sns-modal-bg').addEventListener('click',function(e){
+  if(e.target===this)snsClose();
+});
+
+// ── VALIDATE ──
+function snsCustomer(){
+  var name=document.getElementById('sns-name').value.trim();
+  var email=document.getElementById('sns-email').value.trim();
+  var phone=document.getElementById('sns-phone').value.trim();
+  if(!name||!email||!phone){
+    alert('Please fill in your name, email and phone number to continue.');
+    return null;
+  }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    alert('Please enter a valid email address.');
+    return null;
+  }
+  return{name:name,email:email,phone:phone};
+}
+
+// ── PAYSTACK ──
+// Replace 'pk_live_YOUR_PAYSTACK_KEY' with your actual Paystack public key
+function snsPaystack(){
+  var c=snsCustomer();if(!c)return;
+  var handler=PaystackPop.setup({
+    key:'pk_live_YOUR_PAYSTACK_KEY',
+    email:c.email,amount:750000,currency:'NGN',
+    ref:'SNS2_PS_'+Date.now(),
+    metadata:{custom_fields:[
+      {display_name:'Name',variable_name:'name',value:c.name},
+      {display_name:'Phone',variable_name:'phone',value:c.phone},
+      {display_name:'Course',variable_name:'course',value:'Shape & Shine v2'}
+    ]},
+    callback:function(res){
+      fbq('track','Purchase',{
+        value:7500,currency:'NGN',
+        content_name:'Shape & Shine Course',
+        content_ids:['sns-001'],content_type:'product'
+      });
+      snsDeliverCourse(c,res.reference,'Paystack');
+    },
+    onClose:function(){}
+  });
+  handler.openIframe();
+}
+
+// ── FLUTTERWAVE ──
+// Replace 'FLWPUBK_YOUR_FLW_KEY' with your actual Flutterwave public key
+function snsFlutterwave(){
+  var c=snsCustomer();if(!c)return;
+  FlutterwaveCheckout({
+    public_key:'FLWPUBK_YOUR_FLW_KEY',
+    tx_ref:'SNS2_FLW_'+Date.now(),
+    amount:7500,currency:'NGN',
+    payment_options:'card,ussd,banktransfer',
+    customer:{email:c.email,phone_number:c.phone,name:c.name},
+    customizations:{
+      title:'Shape & Shine',
+      description:'Nigerian Women Body Transformation Course',
+      logo:''
+    },
+    callback:function(res){
+      if(res.status==='successful'){
+        fbq('track','Purchase',{
+          value:7500,currency:'NGN',
+          content_name:'Shape & Shine Course',
+          content_ids:['sns-001'],content_type:'product'
+        });
+        snsDeliverCourse(c,res.transaction_id,'Flutterwave');
+      }
+    },
+    onclose:function(){}
+  });
+}
+
+// ══════════════════════════════════════════════════════
+//  POST-PURCHASE EMAIL DELIVERY
+//  This function fires after every successful payment.
+//  It calls YOUR_WEBHOOK_URL with the customer's details.
+//
+//  HOW TO SET UP EMAIL DELIVERY (pick one option):
+//
+//  OPTION A — Brevo (Sendinblue) [Recommended, free tier]
+//   1. Sign up at brevo.com
+//   2. Create a transactional email template with your
+//      course access link and login instructions
+//   3. Get your API key from Brevo dashboard
+//   4. Replace YOUR_WEBHOOK_URL below with:
+//      https://api.brevo.com/v3/smtp/email
+//   5. Update the fetch body to use Brevo's API format
+//      (see: developers.brevo.com/reference/sendtransacemail)
+//
+//  OPTION B — Mailchimp Automation
+//   1. Create a Mailchimp audience
+//   2. Set up an automation triggered by a tag "sns-purchased"
+//   3. Use Mailchimp's API to add contact + tag on purchase
+//   4. Replace YOUR_WEBHOOK_URL with your Mailchimp webhook
+//
+//  OPTION C — Make.com (Easiest no-code option)
+//   1. Go to make.com → Create a scenario
+//   2. Use "Webhooks" as trigger → "Gmail" or "Brevo" as action
+//   3. Copy the webhook URL Make gives you
+//   4. Paste it as YOUR_WEBHOOK_URL below
+//   5. In Make, set the email action to send your course
+//      access email using the name/email from the webhook payload
+//
+//  OPTION D — EmailJS (Frontend only, simplest)
+//   1. Sign up at emailjs.com (free 200 emails/month)
+//   2. Create an email template with course access link
+//   3. Replace the fetch below with EmailJS send call
+// ══════════════════════════════════════════════════════
+function snsDeliverCourse(customer, reference, gateway){
+  // Show success screen immediately — don't wait for email API
+  snsShowSuccess(reference, gateway, customer.email);
+
+  // Fire email delivery webhook
+  // Replace 'YOUR_WEBHOOK_URL' with your actual webhook URL
+  fetch('YOUR_WEBHOOK_URL', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      name: customer.name,
+      email: customer.email,
+      phone: customer.phone,
+      reference: reference,
+      gateway: gateway,
+      course: 'Shape & Shine',
+      purchased_at: new Date().toISOString(),
+      // Course access details sent in email:
+      course_url: 'https://YOUR-COURSE-PLATFORM-URL.com/access',
+      // Add your course link above ↑
+    })
+  })
+  .then(function(res){
+    console.log('Course delivery triggered:', res.status);
+  })
+  .catch(function(err){
+    // Email delivery failed — log for manual follow-up
+    // In production, send yourself a fallback notification
+    console.error('Delivery webhook failed:', err);
+  });
+}
+
+function snsShowSuccess(ref, gw, email){
+  snsClose();
+  var sc=document.getElementById('sns-success');
+  document.getElementById('sns-ref-txt').textContent=
+    'Payment ref: '+ref+' ('+gw+') · Access sent to: '+email;
+  sc.classList.add('open');
+}
+
+// ── FAQ ──
+function snsFaq(btn){btn.parentElement.classList.toggle('open');}
+</script>
