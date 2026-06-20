@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Shape & Shine — Nigerian Women's Body Transformation</title>
+
 <!-- META PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -8,665 +15,848 @@ s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
 (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','836627435951529');
 fbq('track','PageView');
-fbq('track','ViewContent',{
-  content_name:'Shape & Shine Course',
-  content_category:'Weight Loss',
-  value:7500,currency:'NGN',
-  content_ids:['sns-001'],content_type:'product'
-});
+fbq('track','ViewContent',{content_name:'Shape & Shine Course',value:7500,currency:'NGN'});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=836627435951529&ev=PageView&noscript=1"/></noscript>
 
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <script src="https://checkout.flutterwave.com/v3.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* ─── RESET ─── */
-#sns,#sns *,#sns *::before,#sns *::after{margin:0;padding:0;box-sizing:border-box;}
-#sns{
-  font-family:'Inter',sans-serif;
-  background:#FDFAF5;color:#120600;
-  line-height:1.65;overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  font-size:16px;
-}
-#sns img{max-width:100%;display:block;}
-#sns button{font-family:'Inter',sans-serif;cursor:pointer;border:none;}
-#sns a{text-decoration:none;}
-
-/* ─── TOKENS ─── */
-#sns{
-  --fire:#C84B18;
-  --ember:#E06830;
-  --gold:#D4921A;
-  --honey:#F0B429;
-  --ink:#120600;
-  --soil:#2E1000;
-  --bark:#5C3010;
-  --fog:#8A6040;
-  --sand:#FDFAF5;
-  --linen:#F5EAD8;
-  --border:#E8D5BC;
-  --green:#1A5C20;
-  --leaf:#D5EDDA;
-  --white:#FFFFFF;
+/* =============================================
+   HARD RESET — overrides any theme interference
+   ============================================= */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
 }
 
-/* ─── URGENCY BAR ─── */
-#sns-bar{
-  background:var(--ink);
-  padding:10px 16px;text-align:center;
-  font-size:.78rem;font-weight:700;
-  color:var(--honey);letter-spacing:.3px;
-  position:sticky;top:0;z-index:200;
-  line-height:1.5;
-}
-#sns-bar strong{color:var(--ember);}
+* { box-sizing: border-box !important; }
 
-/* ─── NAV ─── */
-#sns-nav{
-  background:rgba(253,250,245,.97);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border);
-  padding:12px 5%;
-  display:flex;align-items:center;justify-content:space-between;
-  position:sticky;top:38px;z-index:100;
-  gap:10px;
+/* =============================================
+   TOKENS
+   ============================================= */
+:root {
+  --fire: #C84B18;
+  --ember: #E06830;
+  --honey: #F0B429;
+  --gold: #D4921A;
+  --ink: #120600;
+  --soil: #2E1000;
+  --bark: #5C3010;
+  --fog: #8A6040;
+  --sand: #FDFAF5;
+  --linen: #F5EAD8;
+  --border: #E8D5BC;
+  --green: #1A5C20;
+  --leaf: #D5EDDA;
+  --white: #FFFFFF;
 }
-.sns-logo{
-  font-family:'Playfair Display',serif;
-  font-size:1.2rem;font-weight:900;color:var(--fire);
-  letter-spacing:-.3px;white-space:nowrap;
-}
-.sns-nav-btn{
-  background:var(--fire);color:#fff;
-  padding:10px 18px;border-radius:3px;
-  font-size:.78rem;font-weight:700;letter-spacing:.2px;
-  transition:all .18s;white-space:nowrap;flex-shrink:0;
-}
-.sns-nav-btn:hover{background:var(--soil);}
-.sns-nav-btn:active{transform:scale(.97);}
 
-/* ─── SHARED ─── */
-.sns-wrap{max-width:1060px;margin:0 auto;padding:0 5%;}
-.sns-tag{
-  display:inline-block;
-  font-size:.64rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  padding:4px 11px;border-radius:2px;margin-bottom:14px;
+/* =============================================
+   BASE — mobile first, no media queries needed
+   ============================================= */
+#sns {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+  color: var(--ink) !important;
+  background: var(--sand) !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  -webkit-font-smoothing: antialiased;
 }
-.sns-tag-fire{background:rgba(200,75,24,.1);color:var(--fire);}
-.sns-tag-gold{background:rgba(212,146,26,.12);color:var(--gold);}
-.sns-tag-white{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);}
-.sns-h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2rem,7vw,4.8rem);
-  font-weight:900;line-height:1.08;letter-spacing:-.3px;
-}
-.sns-h2{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.6rem,5vw,3rem);
-  font-weight:900;line-height:1.15;letter-spacing:-.2px;
-}
-.sns-h3{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.2rem,4vw,2rem);
-  font-weight:700;line-height:1.2;
-}
-.sns-body{font-size:.97rem;line-height:1.75;color:var(--bark);}
-.sns-body-sm{font-size:.86rem;line-height:1.7;color:var(--fog);}
 
-/* ─── CTA BUTTONS ─── */
-.sns-cta-fire{
-  background:linear-gradient(135deg,var(--ember) 0%,var(--fire) 100%);
-  color:#fff;padding:17px 32px;border-radius:3px;
-  font-size:1rem;font-weight:800;letter-spacing:.2px;
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  box-shadow:0 8px 28px rgba(200,75,24,.3);
-  transition:all .2s;width:100%;max-width:420px;
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
-}
-.sns-cta-fire:active{transform:scale(.98);}
-.sns-cta-outline{
-  background:transparent;
-  border:1.5px solid rgba(255,255,255,.25);
-  color:rgba(255,255,255,.7);
-  padding:16px 24px;border-radius:3px;
-  font-size:.88rem;font-weight:500;
-  transition:all .2s;
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
-}
-.sns-cta-outline:active{opacity:.7;}
-.sns-trust-row{
-  display:flex;align-items:center;gap:6px;
-  font-size:.72rem;color:var(--fog);margin-top:14px;
-  flex-wrap:wrap;line-height:1.6;
-}
-.sns-trust-dot{width:3px;height:3px;background:var(--border);border-radius:50%;flex-shrink:0;}
+#sns img { max-width: 100%; display: block; }
+#sns button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; }
 
-/* ═══ SECTION 1 — INTRO ═══ */
-#sns-intro{
-  background:var(--ink);
-  padding:72px 5% 60px;
-  position:relative;overflow:hidden;
+/* =============================================
+   URGENCY BAR
+   ============================================= */
+#sns-bar {
+  background: var(--ink);
+  color: var(--honey);
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  width: 100%;
 }
-.sns-intro-glow{
-  position:absolute;top:-100px;right:-150px;
-  width:500px;height:500px;
-  background:radial-gradient(circle,rgba(200,75,24,.14) 0%,transparent 65%);
-  pointer-events:none;
-}
-.sns-intro-glow2{
-  position:absolute;bottom:-150px;left:-80px;
-  width:400px;height:400px;
-  background:radial-gradient(circle,rgba(212,146,26,.08) 0%,transparent 65%);
-  pointer-events:none;
-}
-.sns-intro-inner{max-width:780px;position:relative;z-index:1;}
-#sns-intro .sns-h1{color:#fff;margin-bottom:20px;}
-#sns-intro .sns-h1 em{color:var(--honey);font-style:italic;}
-#sns-intro .sns-h1 mark{
-  background:none;color:var(--ember);
-  border-bottom:3px solid var(--ember);padding-bottom:2px;
-}
-.sns-intro-sub{
-  font-size:clamp(.95rem,3vw,1.15rem);
-  color:#C8A888;line-height:1.75;max-width:620px;margin-bottom:32px;
-}
-.sns-intro-proof{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  margin-bottom:36px;
-  padding-bottom:32px;
-  border-bottom:1px solid rgba(255,255,255,.07);
-}
-.sns-intro-stat .n{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.6rem,5vw,2.4rem);
-  font-weight:900;color:var(--honey);
-  display:block;line-height:1;margin-bottom:4px;
-}
-.sns-intro-stat .l{font-size:.62rem;color:#8A6858;text-transform:uppercase;letter-spacing:1px;}
-.sns-intro-btns{
-  display:flex;flex-direction:column;
-  gap:10px;margin-bottom:18px;
-  align-items:flex-start;
-}
-.sns-trust-row-dark .sns-trust-dot{background:#5A3828;}
-.sns-trust-row-dark{color:#7A5848;}
+#sns-bar strong { color: var(--ember); }
 
-/* ═══ SECTION 2 — DISCOVERY ═══ */
-#sns-discovery{background:var(--linen);padding:64px 5%;}
-#sns-discovery .sns-h2{margin-bottom:12px;}
-#sns-discovery .sns-body{max-width:600px;margin-bottom:40px;}
-.sns-pain-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:1px;background:var(--border);
-  border:1px solid var(--border);
-  margin-bottom:36px;
+/* =============================================
+   NAV
+   ============================================= */
+#sns-nav {
+  background: rgba(253,250,245,0.97);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 20px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  position: sticky;
+  top: 38px;
+  z-index: 200;
+  gap: 8px;
 }
-.sns-pain-card{
-  background:var(--sand);padding:24px 20px;
-  position:relative;
+.sns-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--fire);
+  white-space: nowrap;
 }
-.sns-pain-card::before{
-  content:'';position:absolute;top:0;left:0;
-  width:3px;height:100%;background:var(--ember);opacity:0;
-  transition:opacity .2s;
+.sns-nav-btn {
+  background: var(--fire);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
-.sns-pain-card:hover::before{opacity:1;}
-.sns-pain-icon{font-size:1.5rem;margin-bottom:10px;display:block;}
-.sns-pain-card h3{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
-.sns-pain-card p{font-size:.83rem;color:var(--fog);line-height:1.65;}
-.sns-bridge{
-  background:var(--fire);
-  border-radius:4px;padding:28px 22px;
-  text-align:center;
-}
-.sns-bridge h3{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.1rem,4vw,1.8rem);
-  font-style:italic;color:#fff;margin-bottom:10px;line-height:1.3;
-}
-.sns-bridge p{color:rgba(255,255,255,.7);font-size:.88rem;max-width:560px;margin:0 auto;line-height:1.65;}
 
-/* ═══ SECTION 3 — MECHANISM ═══ */
-#sns-mechanism{background:var(--sand);padding:64px 5%;}
-.sns-mech-grid{
-  display:flex;flex-direction:column;
-  gap:32px;margin-top:36px;
+/* =============================================
+   SHARED UTILITIES
+   ============================================= */
+.sns-wrap {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1060px;
 }
-.sns-mech-left .sns-body{margin-bottom:20px;}
-.sns-vs{
-  display:grid;grid-template-columns:1fr;gap:0;
-  border:1px solid var(--border);border-radius:4px;overflow:hidden;
-  margin-top:24px;
-}
-.sns-vs-col{padding:20px 18px;}
-.sns-vs-col:first-child{background:#FDECEA;border-bottom:1px solid var(--border);}
-.sns-vs-col:last-child{background:var(--leaf);}
-.sns-vs-label{
-  font-size:.63rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;
-  margin-bottom:12px;display:flex;align-items:center;gap:6px;
-}
-.sns-vs-col:first-child .sns-vs-label{color:#922B21;}
-.sns-vs-col:last-child .sns-vs-label{color:var(--green);}
-.sns-vs-item{
-  display:flex;gap:8px;align-items:flex-start;
-  font-size:.82rem;color:var(--soil);margin-bottom:9px;line-height:1.5;
-}
-.sns-vs-item:last-child{margin-bottom:0;}
-.sns-vs-item .vi{flex-shrink:0;margin-top:1px;}
-.sns-mech-right{display:flex;flex-direction:column;gap:12px;}
-.sns-reason-card{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:4px;padding:18px 16px;
-  display:grid;grid-template-columns:36px 1fr;gap:12px;
-  align-items:start;
-}
-.sns-reason-card:active{border-color:var(--ember);}
-.sns-rc-num{
-  font-family:'Playfair Display',serif;
-  font-size:1.4rem;font-weight:900;color:var(--border);line-height:1;
-}
-.sns-rc-body h4{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
-.sns-rc-body p{font-size:.8rem;color:var(--fog);line-height:1.6;margin:0;}
 
-/* ═══ SECTION 4 — SOLUTION ═══ */
-#sns-solution{background:var(--linen);padding:64px 5%;}
-.sns-sol-intro{max-width:660px;margin-bottom:36px;}
-.sns-sol-intro .sns-body{margin-top:12px;}
-.sns-modules{border:1px solid var(--border);background:var(--white);}
-.sns-mod-row{
-  display:grid;grid-template-columns:44px 1fr;
-  border-bottom:1px solid var(--border);
+.sns-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 14px;
 }
-.sns-mod-row:last-child{border-bottom:none;}
-.sns-mod-row:active{background:#FDF5EC;}
-.sns-mod-n{
-  background:var(--ink);color:var(--honey);
-  font-family:'Playfair Display',serif;
-  font-size:.9rem;font-weight:900;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-}
-.sns-mod-body{padding:16px 18px;}
-.sns-mod-body h4{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:4px;}
-.sns-mod-body p{font-size:.78rem;color:var(--fog);line-height:1.55;margin:0;}
-.sns-mod-badge{display:none;}
-.sns-gets{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:10px;margin-top:32px;
-}
-.sns-get-item{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:4px;padding:16px 14px;
-  display:flex;gap:10px;align-items:flex-start;
-}
-.sns-get-icon{font-size:1.2rem;flex-shrink:0;margin-top:1px;}
-.sns-get-item h4{font-size:.82rem;font-weight:700;color:var(--ink);margin-bottom:2px;}
-.sns-get-item p{font-size:.74rem;color:var(--fog);margin:0;line-height:1.45;}
+.sns-tag-fire { background: rgba(200,75,24,.1); color: var(--fire); }
+.sns-tag-gold { background: rgba(212,146,26,.12); color: var(--gold); }
+.sns-tag-white { background: rgba(255,255,255,.12); color: rgba(255,255,255,.85); }
 
-/* ═══ SECTION 5 — PROOF ═══ */
-#sns-proof{background:var(--ink);padding:64px 5%;}
-#sns-proof .sns-h2{color:#fff;margin-bottom:10px;}
-#sns-proof .sns-body-sm{color:#C8A888;margin-bottom:36px;max-width:520px;}
-.sns-result-strip{
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:1px;background:#2A1006;border:1px solid #2A1006;
-  margin:28px 0 36px;
+.sns-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
 }
-.sns-result-item{
-  background:#120600;
-  padding:22px 16px;text-align:center;
+.sns-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
 }
-.sns-result-num{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.8rem,6vw,2.8rem);
-  font-weight:900;color:var(--honey);
-  display:block;line-height:1;margin-bottom:4px;
+.sns-h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
 }
-.sns-result-label{font-size:.65rem;color:#A07858;text-transform:uppercase;letter-spacing:1.2px;}
-.sns-img-note{
-  background:#1A0A00;border:1px dashed #4A2818;
-  border-radius:3px;padding:12px 14px;
-  text-align:center;font-size:.75rem;color:#A07858;
-  margin-bottom:20px;line-height:1.6;
-}
-.sns-img-note strong{color:var(--honey);}
-.sns-img-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:3px;margin-bottom:40px;
-}
-.sns-img-card{
-  aspect-ratio:4/5;
-  background:linear-gradient(160deg,#1E0C02,#2A1006);
-  border:1px solid #2E1206;
-  position:relative;overflow:hidden;
-}
-.sns-img-card::before{
-  content:'';position:absolute;inset:0;z-index:1;
-  background:radial-gradient(circle at 50% 80%,rgba(200,75,24,.08),transparent 60%);
-}
-.sns-img-card img{
-  width:100%;height:100%;
-  object-fit:cover;
-  position:absolute;inset:0;
-}
-.sns-img-card .sns-img-overlay{
-  position:absolute;bottom:0;left:0;right:0;z-index:2;
-  background:linear-gradient(transparent,rgba(0,0,0,.75));
-  padding:14px 12px;
-}
-.sns-img-label{
-  font-size:.65rem;font-weight:700;color:rgba(255,255,255,.8);
-  text-transform:uppercase;letter-spacing:1px;line-height:1.4;
-}
-.sns-img-result{
-  font-family:'Playfair Display',serif;
-  font-size:.95rem;font-weight:900;color:var(--honey);
-  margin-top:3px;
-}
-/* placeholder state */
-.sns-img-card .sns-img-placeholder{
-  position:absolute;inset:0;z-index:1;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  font-size:2rem;opacity:.3;
-}
-.sns-testi-grid{
-  display:grid;grid-template-columns:1fr;
-  gap:12px;margin-bottom:36px;
-}
-.sns-tc{
-  background:#1A0A00;border:1px solid #2A1006;
-  border-radius:3px;padding:22px 18px;
-}
-.sns-tc-stars{color:var(--honey);font-size:.76rem;letter-spacing:2px;margin-bottom:12px;}
-.sns-tc-quote{
-  font-size:.84rem;color:#C8A070;line-height:1.7;
-  margin-bottom:14px;font-style:italic;
-}
-.sns-tc-name{font-size:.7rem;font-weight:800;color:var(--honey);text-transform:uppercase;letter-spacing:1px;}
-.sns-tc-meta{font-size:.68rem;color:#6A3A18;margin-top:3px;}
+.sns-body { font-size: 15px; line-height: 1.75; color: var(--bark); }
+.sns-body-sm { font-size: 14px; line-height: 1.7; color: var(--fog); }
 
-/* ═══ SECTION 6 — CTA ═══ */
-#sns-cta-sec{background:var(--sand);padding:64px 5%;}
-.sns-cta-layout{
-  display:flex;flex-direction:column;
-  gap:36px;
+/* =============================================
+   BUTTONS
+   ============================================= */
+.sns-btn-fire {
+  display: block !important;
+  width: 100% !important;
+  background: linear-gradient(135deg, var(--ember), var(--fire));
+  color: #fff !important;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 18px 20px;
+  border-radius: 4px;
+  text-align: center;
+  border: none;
+  box-shadow: 0 6px 24px rgba(200,75,24,.3);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  cursor: pointer;
+  letter-spacing: 0.2px;
 }
-.sns-cta-left .sns-h2{margin-bottom:18px;}
-.sns-urgency-strip{
-  background:var(--linen);border:1px solid var(--border);
-  border-left:4px solid var(--fire);
-  border-radius:0 3px 3px 0;padding:12px 16px;
-  margin-bottom:22px;
-  font-size:.84rem;color:var(--soil);font-weight:500;line-height:1.55;
+.sns-btn-fire:active { opacity: 0.9; transform: scale(0.99); }
+
+.sns-btn-outline {
+  display: block !important;
+  width: 100% !important;
+  background: transparent;
+  color: rgba(255,255,255,0.7) !important;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 15px 20px;
+  border-radius: 4px;
+  text-align: center;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  cursor: pointer;
 }
-.sns-urgency-strip b{color:var(--fire);}
-.sns-checklist{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
-.sns-checklist li{
-  display:flex;gap:10px;align-items:flex-start;
-  font-size:.9rem;color:var(--soil);line-height:1.5;
+
+.sns-trust {
+  font-size: 11px;
+  color: #7A5848;
+  line-height: 1.7;
+  margin-top: 14px;
+  text-align: center;
 }
-.sns-chk-icon{
-  width:20px;height:20px;background:var(--fire);color:#fff;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:.58rem;font-weight:900;flex-shrink:0;margin-top:2px;
+
+/* =============================================
+   SECTION 1: INTRO
+   ============================================= */
+#sns-intro {
+  background: var(--ink);
+  padding: 56px 20px 52px;
+  position: relative;
+  overflow: hidden;
 }
-.sns-guar-mini{
-  background:var(--leaf);border:1px solid #A8D8B0;
-  border-radius:3px;padding:14px 16px;
-  display:flex;gap:10px;align-items:flex-start;
+.sns-glow1 {
+  position: absolute; top: -80px; right: -100px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,75,24,.15) 0%, transparent 70%);
+  pointer-events: none;
 }
-.sns-guar-mini .gi{font-size:1.4rem;flex-shrink:0;}
-.sns-guar-mini h4{font-size:.83rem;font-weight:700;color:var(--green);margin-bottom:3px;}
-.sns-guar-mini p{font-size:.76rem;color:#2A5C30;margin:0;line-height:1.55;}
+#sns-intro .sns-tag { margin-bottom: 18px; }
+#sns-intro .sns-h1 { color: #fff; margin-bottom: 18px; }
+#sns-intro .sns-h1 em { color: var(--honey); font-style: italic; display: block; }
+#sns-intro .sns-h1 mark {
+  background: none; color: var(--ember);
+  border-bottom: 3px solid var(--ember); padding-bottom: 1px;
+}
+.sns-intro-sub {
+  font-size: 15px;
+  color: #C8A888;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+/* Stats row — 4 in a row on mobile, small text */
+.sns-stats {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 12px !important;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.sns-stat-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--honey);
+  display: block;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.sns-stat-l {
+  font-size: 9px;
+  color: #7A5848;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  display: block;
+}
+.sns-intro-btns {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  margin-bottom: 16px;
+}
+
+/* =============================================
+   SECTION 2: DISCOVERY
+   ============================================= */
+#sns-discovery {
+  background: var(--linen);
+  padding: 52px 20px;
+}
+#sns-discovery .sns-h2 { margin-bottom: 10px; }
+#sns-discovery .sns-body { margin-bottom: 28px; }
+
+/* CRITICAL: force single column on mobile */
+.sns-pain-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  border: 1px solid var(--border) !important;
+  margin-bottom: 28px;
+}
+.sns-pain-card {
+  background: var(--sand);
+  padding: 22px 18px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.sns-pain-card:last-child { border-bottom: none; }
+.sns-pain-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--ember); opacity: 0;
+}
+.sns-pain-card:active::before { opacity: 1; }
+.sns-pain-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+.sns-pain-card h3 {
+  font-size: 14px; font-weight: 700;
+  color: var(--ink); margin-bottom: 6px;
+}
+.sns-pain-card p { font-size: 13px; color: var(--fog); line-height: 1.65; }
+
+.sns-bridge {
+  background: var(--fire);
+  border-radius: 4px;
+  padding: 26px 20px;
+  text-align: center;
+}
+.sns-bridge h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px; font-style: italic; font-weight: 700;
+  color: #fff; margin-bottom: 10px; line-height: 1.3;
+}
+.sns-bridge p { font-size: 13px; color: rgba(255,255,255,.7); line-height: 1.65; }
+
+/* =============================================
+   SECTION 3: MECHANISM
+   ============================================= */
+#sns-mechanism { background: var(--sand); padding: 52px 20px; }
+#sns-mechanism .sns-h2 { margin-bottom: 12px; }
+#sns-mechanism .sns-body { margin-bottom: 24px; }
+
+/* VS table — stacked on mobile */
+.sns-vs {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.sns-vs-col { padding: 18px 16px; }
+.sns-vs-col:first-child {
+  background: #FDECEA;
+  border-bottom: 1px solid var(--border);
+}
+.sns-vs-col:last-child { background: var(--leaf); }
+.sns-vs-label {
+  font-size: 10px; font-weight: 800;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 12px; display: flex; align-items: center; gap: 5px;
+}
+.sns-vs-col:first-child .sns-vs-label { color: #922B21; }
+.sns-vs-col:last-child .sns-vs-label { color: var(--green); }
+.sns-vs-item {
+  display: flex; gap: 8px; align-items: flex-start;
+  font-size: 13px; color: var(--soil);
+  margin-bottom: 8px; line-height: 1.5;
+}
+.sns-vs-item:last-child { margin-bottom: 0; }
+
+/* Reason cards */
+.sns-reasons { display: flex; flex-direction: column; gap: 10px; }
+.sns-reason-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.sns-rc-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 900;
+  color: var(--border); line-height: 1; flex-shrink: 0;
+}
+.sns-rc-body h4 { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.sns-rc-body p { font-size: 12px; color: var(--fog); line-height: 1.6; margin: 0; }
+
+/* =============================================
+   SECTION 4: SOLUTION
+   ============================================= */
+#sns-solution { background: var(--linen); padding: 52px 20px; }
+#sns-solution .sns-h2 { margin-bottom: 10px; }
+#sns-solution .sns-body { margin-bottom: 28px; }
+
+.sns-modules { border: 1px solid var(--border); background: var(--white); }
+.sns-mod-row {
+  display: grid !important;
+  grid-template-columns: 44px 1fr !important;
+  border-bottom: 1px solid var(--border);
+}
+.sns-mod-row:last-child { border-bottom: none; }
+.sns-mod-row:active { background: #FDF5EC; }
+.sns-mod-n {
+  background: var(--ink); color: var(--honey);
+  font-family: 'Playfair Display', serif;
+  font-size: 14px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+}
+.sns-mod-body { padding: 14px 16px; }
+.sns-mod-body h4 { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.sns-mod-body p { font-size: 12px; color: var(--fog); line-height: 1.5; margin: 0; }
+
+/* What you get — 2 column grid */
+.sns-gets {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px !important;
+  margin-top: 28px;
+}
+.sns-get-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 14px 12px;
+  display: flex; gap: 8px; align-items: flex-start;
+}
+.sns-get-icon { font-size: 18px; flex-shrink: 0; }
+.sns-get-item h4 { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.sns-get-item p { font-size: 11px; color: var(--fog); margin: 0; line-height: 1.45; }
+
+/* =============================================
+   SECTION 5: PROOF
+   ============================================= */
+#sns-proof { background: var(--ink); padding: 52px 20px; }
+#sns-proof .sns-h2 { color: #fff; margin-bottom: 8px; }
+#sns-proof .sns-body-sm { color: #C8A888; margin-bottom: 28px; }
+
+/* Results strip — 2×2 on mobile */
+.sns-result-strip {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1px !important;
+  background: #2A1006;
+  border: 1px solid #2A1006;
+  margin-bottom: 28px;
+}
+.sns-result-item {
+  background: #120600;
+  padding: 20px 12px;
+  text-align: center;
+}
+.sns-result-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 900;
+  color: var(--honey); display: block;
+  line-height: 1; margin-bottom: 4px;
+}
+.sns-result-label {
+  font-size: 10px; color: #A07858;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+
+.sns-img-note {
+  background: #1A0A00;
+  border: 1px dashed #4A2818;
+  border-radius: 3px; padding: 10px 14px;
+  font-size: 12px; color: #A07858;
+  text-align: center; margin-bottom: 16px; line-height: 1.6;
+}
+.sns-img-note strong { color: var(--honey); }
+
+/* Images — 2×2 grid on mobile */
+.sns-img-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3px !important;
+  margin-bottom: 36px;
+}
+.sns-img-card {
+  aspect-ratio: 3/4;
+  background: #1E0C02;
+  position: relative;
+  overflow: hidden;
+}
+.sns-img-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  position: absolute; inset: 0;
+  display: block;
+}
+.sns-img-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+  background: linear-gradient(transparent, rgba(0,0,0,.8));
+  padding: 12px 10px;
+}
+.sns-img-label {
+  font-size: 10px; font-weight: 700;
+  color: rgba(255,255,255,.85);
+  text-transform: uppercase; letter-spacing: 0.8px;
+  display: block; line-height: 1.4;
+}
+.sns-img-result {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px; font-weight: 900;
+  color: var(--honey); display: block; margin-top: 2px;
+}
+
+/* Testimonials — single column on mobile */
+.sns-testi-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  margin-bottom: 32px;
+}
+.sns-tc {
+  background: #1A0A00;
+  border: 1px solid #2A1006;
+  border-radius: 4px; padding: 20px 16px;
+}
+.sns-tc-stars { color: var(--honey); font-size: 12px; letter-spacing: 2px; margin-bottom: 10px; }
+.sns-tc-quote {
+  font-size: 13px; color: #C8A070;
+  line-height: 1.7; margin-bottom: 14px; font-style: italic;
+}
+.sns-tc-name { font-size: 11px; font-weight: 800; color: var(--honey); text-transform: uppercase; letter-spacing: 1px; }
+.sns-tc-meta { font-size: 11px; color: #5A3018; margin-top: 2px; }
+
+/* =============================================
+   COUNTDOWN
+   ============================================= */
+#sns-cd {
+  background: #080200;
+  padding: 20px 20px;
+  text-align: center;
+}
+.sns-cd-label {
+  font-size: 10px; color: #5A3018;
+  font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.sns-clocks {
+  display: flex; gap: 4px;
+  justify-content: center; align-items: flex-end;
+}
+.sns-cb { text-align: center; min-width: 52px; }
+.sns-cn {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px; font-weight: 900;
+  color: var(--honey); display: block; line-height: 1;
+}
+.sns-cu {
+  font-size: 9px; color: #3A1A08;
+  text-transform: uppercase; letter-spacing: 1.5px;
+}
+.sns-csep {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; color: var(--ember);
+  line-height: 1; padding-bottom: 16px;
+}
+
+/* =============================================
+   SECTION 6: CTA
+   ============================================= */
+#sns-cta-sec { background: var(--sand); padding: 52px 20px; }
+#sns-cta-sec .sns-h2 { margin-bottom: 16px; }
+
+.sns-urgency-strip {
+  background: var(--linen);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--fire);
+  border-radius: 0 3px 3px 0;
+  padding: 12px 14px; margin-bottom: 20px;
+  font-size: 13px; color: var(--soil); font-weight: 500; line-height: 1.6;
+}
+.sns-urgency-strip b { color: var(--fire); }
+
+.sns-checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.sns-checklist li {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 14px; color: var(--soil); line-height: 1.5;
+}
+.sns-chk {
+  width: 20px; height: 20px;
+  background: var(--fire); color: #fff;
+  border-radius: 50%; display: flex;
+  align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 900; flex-shrink: 0; margin-top: 2px;
+}
+
+.sns-guar-mini {
+  background: var(--leaf); border: 1px solid #A8D8B0;
+  border-radius: 4px; padding: 14px;
+  display: flex; gap: 10px; align-items: flex-start;
+  margin-bottom: 32px;
+}
+.sns-guar-mini .gi { font-size: 22px; flex-shrink: 0; }
+.sns-guar-mini h4 { font-size: 13px; font-weight: 700; color: var(--green); margin-bottom: 3px; }
+.sns-guar-mini p { font-size: 12px; color: #2A5C30; margin: 0; line-height: 1.55; }
 
 /* Price card */
-.sns-price-card{
-  background:var(--white);
-  border:2px solid var(--ember);border-radius:4px;overflow:hidden;
-  box-shadow:0 16px 48px rgba(200,75,24,.12);
+.sns-price-card {
+  background: var(--white);
+  border: 2px solid var(--ember);
+  border-radius: 4px; overflow: hidden;
+  box-shadow: 0 12px 40px rgba(200,75,24,.12);
 }
-.sns-pc-top{
-  background:linear-gradient(135deg,var(--fire),var(--ember));
-  padding:18px 22px;
+.sns-pc-top {
+  background: linear-gradient(135deg, var(--fire), var(--ember));
+  padding: 16px 20px;
 }
-.sns-pc-top .eyebrow{
-  font-size:.6rem;font-weight:800;letter-spacing:2px;
-  text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:3px;
+.sns-pc-eyebrow {
+  font-size: 10px; font-weight: 800;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,.6); margin-bottom: 3px;
 }
-.sns-pc-top h3{
-  font-family:'Playfair Display',serif;
-  font-size:1.3rem;font-weight:900;color:#fff;
+.sns-pc-top h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 900; color: #fff;
 }
-.sns-pc-body{padding:22px 20px;}
-.sns-was{font-size:.86rem;color:#B09080;text-decoration:line-through;display:block;margin-bottom:3px;}
-.sns-price{
-  font-family:'Playfair Display',serif;
-  font-size:3.4rem;font-weight:900;color:var(--fire);line-height:1;
+.sns-pc-body { padding: 20px 18px; }
+.sns-was { font-size: 13px; color: #B09080; text-decoration: line-through; display: block; margin-bottom: 2px; }
+.sns-price-big {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px; font-weight: 900; color: var(--fire); line-height: 1;
 }
-.sns-price sup{font-size:1.3rem;vertical-align:super;}
-.sns-price-note{font-size:.73rem;color:var(--fog);margin:6px 0 18px;line-height:1.5;}
-.sns-incl{list-style:none;margin-bottom:18px;}
-.sns-incl li{
-  display:flex;gap:8px;align-items:flex-start;
-  font-size:.82rem;color:var(--soil);
-  padding:7px 0;border-bottom:1px solid #F5EAD8;line-height:1.4;
+.sns-price-big sup { font-size: 20px; vertical-align: super; }
+.sns-price-note { font-size: 11px; color: var(--fog); margin: 6px 0 16px; line-height: 1.5; }
+
+.sns-incl { list-style: none; margin-bottom: 18px; }
+.sns-incl li {
+  display: flex; gap: 8px; align-items: flex-start;
+  font-size: 13px; color: var(--soil);
+  padding: 7px 0; border-bottom: 1px solid #F5EAD8; line-height: 1.4;
 }
-.sns-incl li:last-child{border-bottom:none;}
-.sns-incl li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;}
-.sns-pay-sep{border-top:1px solid #F5EAD8;padding-top:18px;}
-.sns-pay-label{
-  font-size:.61rem;font-weight:800;letter-spacing:2px;
-  text-transform:uppercase;color:var(--fog);margin-bottom:10px;
+.sns-incl li:last-child { border-bottom: none; }
+.sns-incl li::before { content: '✓'; color: var(--green); font-weight: 900; flex-shrink: 0; }
+
+.sns-pay-sep { border-top: 1px solid #F5EAD8; padding-top: 16px; }
+.sns-pay-label {
+  font-size: 10px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--fog); margin-bottom: 10px;
 }
-.sns-pay-btns{display:flex;flex-direction:column;gap:10px;}
-.sns-pbtn{
-  width:100%;padding:16px;border:none;border-radius:3px;
-  font-family:'Inter',sans-serif;font-size:.92rem;font-weight:700;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  cursor:pointer;transition:all .2s;letter-spacing:.2px;
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
-  min-height:52px;
+.sns-pay-btns { display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+.sns-pbtn {
+  width: 100%; padding: 16px; border: none; border-radius: 4px;
+  font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 54px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation; cursor: pointer;
 }
-.sns-pbtn:active{transform:scale(.98);}
-.sns-pbtn-ps{background:#0BA4DB;color:#fff;}
-.sns-pbtn-fw{background:#F5A623;color:#fff;}
-.sns-or{font-size:.7rem;color:var(--fog);text-align:center;margin:2px 0;}
-.sns-secure{
-  font-size:.68rem;color:var(--fog);
-  display:flex;align-items:center;justify-content:center;
-  gap:4px;margin-top:10px;
+.sns-pbtn:active { opacity: 0.9; transform: scale(0.99); }
+.sns-pbtn-ps { background: #0BA4DB; color: #fff; }
+.sns-pbtn-fw { background: #F5A623; color: #fff; }
+.sns-or { font-size: 11px; color: var(--fog); text-align: center; margin: 2px 0; }
+.sns-secure { font-size: 11px; color: var(--fog); text-align: center; margin-top: 8px; }
+
+/* =============================================
+   FAQ
+   ============================================= */
+#sns-faq { background: var(--linen); padding: 48px 20px; }
+#sns-faq .sns-h3 { text-align: center; margin-bottom: 24px; }
+.sns-faq-wrap { border: 1px solid var(--border); }
+.sns-fi { border-bottom: 1px solid var(--border); }
+.sns-fi:last-child { border-bottom: none; }
+.sns-fq {
+  width: 100%; background: none; border: none; cursor: pointer;
+  padding: 16px; text-align: left;
+  font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+  color: var(--ink); display: flex; justify-content: space-between;
+  align-items: center; gap: 12px; min-height: 54px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.sns-fa {
+  display: none; padding: 0 16px 16px;
+  font-size: 13px; color: var(--fog); line-height: 1.7;
+}
+.sns-fi.open .sns-fa { display: block; }
+.sns-farr { color: var(--ember); font-size: 18px; flex-shrink: 0; transition: transform .2s; }
+.sns-fi.open .sns-farr { transform: rotate(45deg); }
+
+/* =============================================
+   FINAL PUSH
+   ============================================= */
+#sns-final {
+  background: var(--ink);
+  padding: 60px 20px;
+  text-align: center;
+}
+#sns-final .sns-h2 { color: #fff; margin-bottom: 12px; }
+#sns-final .sns-body-sm { color: #5A3018; margin-bottom: 24px; }
+.sns-final-trust {
+  font-size: 11px; color: #4A2010;
+  margin-top: 14px; line-height: 1.8;
 }
 
-/* ═══ COUNTDOWN ═══ */
-#sns-cd{background:#0A0300;padding:22px 5%;text-align:center;}
-#sns-cd .cdl{
-  font-size:.62rem;color:#6A3818;font-weight:700;
-  letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;
+/* =============================================
+   MODAL — bottom sheet on mobile
+   ============================================= */
+#sns-modal-bg {
+  display: none;
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(0,0,0,.85);
+  align-items: flex-end;
+  justify-content: center;
 }
-.sns-clocks{display:flex;gap:4px;justify-content:center;align-items:flex-end;}
-.sns-cb{text-align:center;min-width:52px;}
-.sns-cn{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2rem,8vw,3rem);
-  font-weight:900;color:var(--honey);
-  display:block;line-height:1;
+#sns-modal-bg.open { display: flex; }
+#sns-modal {
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  padding: 8px 20px 40px;
+  width: 100%;
+  max-height: 94vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
 }
-.sns-cu{font-size:.55rem;color:#4A2010;text-transform:uppercase;letter-spacing:2px;}
-.sns-csep{
-  font-family:'Playfair Display',serif;
-  font-size:2.2rem;color:var(--ember);
-  line-height:1;padding-bottom:14px;
+.sns-modal-handle {
+  width: 36px; height: 4px;
+  background: #DDD; border-radius: 2px;
+  margin: 12px auto 20px;
 }
+.sns-mx {
+  position: absolute; top: 14px; right: 14px;
+  width: 28px; height: 28px;
+  background: #F0F0F0; border: none; border-radius: 50%;
+  font-size: 14px; color: #888; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.sns-m-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 900;
+  color: var(--ink); margin-bottom: 4px;
+}
+.sns-m-sub { font-size: 13px; color: var(--fog); margin-bottom: 18px; line-height: 1.6; }
+.sns-mform { display: flex; flex-direction: column; gap: 10px; }
+.sns-mform input {
+  padding: 15px 14px;
+  border: 1.5px solid var(--border); border-radius: 8px;
+  font-family: 'Inter', sans-serif; font-size: 16px;
+  color: var(--ink); outline: none;
+  -webkit-appearance: none; appearance: none;
+  width: 100%;
+}
+.sns-mform input:focus { border-color: var(--ember); }
+.sns-mdiv {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 11px; color: var(--fog);
+}
+.sns-mdiv::before,.sns-mdiv::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+.sns-msec { font-size: 11px; color: var(--fog); text-align: center; margin-top: 6px; }
 
-/* ═══ FAQ ═══ */
-#sns-faq{background:var(--linen);padding:56px 5%;}
-#sns-faq .sns-h3{margin-bottom:28px;text-align:center;}
-.sns-faq-list{max-width:720px;margin:0 auto;border:1px solid var(--border);}
-.sns-fi{border-bottom:1px solid var(--border);}
-.sns-fi:last-child{border-bottom:none;}
-.sns-fq{
-  width:100%;background:none;border:none;cursor:pointer;
-  padding:16px 18px;text-align:left;
-  font-family:'Inter',sans-serif;font-size:.88rem;
-  font-weight:600;color:var(--ink);
-  display:flex;justify-content:space-between;align-items:center;gap:12px;
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
-  min-height:52px;
+/* =============================================
+   SUCCESS
+   ============================================= */
+#sns-success {
+  display: none;
+  position: fixed; inset: 0; z-index: 9500;
+  background: var(--sand);
+  flex-direction: column; align-items: center;
+  justify-content: center; text-align: center; padding: 32px 20px;
+  overflow-y: auto;
 }
-.sns-fa{
-  display:none;padding:0 18px 16px;
-  font-size:.83rem;color:var(--fog);line-height:1.7;
+#sns-success.open { display: flex; }
+.sns-sicon { font-size: 52px; margin-bottom: 16px; }
+.sns-sh { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: var(--ink); margin-bottom: 10px; }
+.sns-ssub { font-size: 14px; color: var(--fog); max-width: 380px; line-height: 1.7; margin-bottom: 20px; }
+.sns-ssteps {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 4px; padding: 18px; max-width: 380px;
+  width: 100%; text-align: left; margin-bottom: 12px;
 }
-.sns-fi.open .sns-fa{display:block;}
-.sns-farr{color:var(--ember);font-size:1.1rem;flex-shrink:0;transition:transform .2s;}
-.sns-fi.open .sns-farr{transform:rotate(45deg);}
+.sns-ssteps h4 { font-size: 11px; font-weight: 700; color: var(--ink); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.sns-ss { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--soil); margin-bottom: 8px; line-height: 1.5; }
+.sns-ss:last-child { margin-bottom: 0; }
+.sns-ssn {
+  width: 20px; height: 20px; background: var(--fire); color: #fff;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 900; flex-shrink: 0; margin-top: 1px;
+}
+#sns-ref { font-size: 11px; color: #9A7060; padding: 0 10px; }
 
-/* ═══ FINAL PUSH ═══ */
-#sns-final{background:var(--ink);padding:72px 5%;text-align:center;}
-#sns-final .sns-h2{color:#fff;max-width:680px;margin:0 auto 14px;}
-#sns-final .sns-body-sm{color:#6A3818;max-width:520px;margin:0 auto 28px;}
-
-/* ═══ MODAL ═══ */
-#sns-modal-bg{
-  display:none;position:fixed;inset:0;z-index:9000;
-  background:rgba(6,2,0,.9);
-  -webkit-backdrop-filter:blur(6px);
-  backdrop-filter:blur(6px);
-  align-items:flex-end;justify-content:center;
-  padding:0;
-}
-#sns-modal-bg.open{display:flex;}
-#sns-modal{
-  background:#fff;
-  border-radius:14px 14px 0 0;
-  padding:28px 22px 36px;
-  width:100%;max-width:480px;
-  position:relative;
-  box-shadow:0 -20px 60px rgba(0,0,0,.4);
-  max-height:92vh;
-  overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
-}
-/* modal drag handle */
-#sns-modal::before{
-  content:'';display:block;
-  width:40px;height:4px;
-  background:#DDD;border-radius:2px;
-  margin:0 auto 20px;
-}
-.sns-mx{
-  position:absolute;top:18px;right:18px;
-  background:#F5F5F5;border:none;
-  width:30px;height:30px;border-radius:50%;
-  font-size:1rem;color:#888;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-}
-.sns-m-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--ink);margin-bottom:4px;}
-.sns-m-sub{font-size:.8rem;color:var(--fog);margin-bottom:18px;line-height:1.6;}
-.sns-mform{display:flex;flex-direction:column;gap:10px;}
-.sns-mform input{
-  padding:15px 14px;border:1.5px solid var(--border);border-radius:6px;
-  font-family:'Inter',sans-serif;font-size:1rem;color:var(--ink);outline:none;
-  transition:border-color .2s;
-  -webkit-appearance:none;
-  appearance:none;
-}
-.sns-mform input:focus{border-color:var(--ember);}
-.sns-mdiv{
-  display:flex;align-items:center;gap:10px;
-  font-size:.68rem;color:var(--fog);
-}
-.sns-mdiv::before,.sns-mdiv::after{content:'';flex:1;height:1px;background:var(--border);}
-.sns-msec{font-size:.7rem;color:var(--fog);display:flex;align-items:center;justify-content:center;gap:4px;margin-top:4px;}
-
-/* ═══ SUCCESS ═══ */
-#sns-success{
-  display:none;position:fixed;inset:0;z-index:9500;
-  background:var(--sand);
-  flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:32px 5%;
-  overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
-}
-#sns-success.open{display:flex;}
-.sns-success-icon{font-size:3.2rem;margin-bottom:16px;}
-.sns-success-h{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--ink);margin-bottom:10px;}
-.sns-success-sub{font-size:.9rem;color:var(--fog);max-width:420px;line-height:1.7;margin-bottom:20px;}
-.sns-success-steps{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:4px;padding:20px;max-width:420px;width:100%;
-  text-align:left;margin-bottom:14px;
-}
-.sns-success-steps h4{font-size:.8rem;font-weight:700;color:var(--ink);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;}
-.sns-ss-item{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--soil);margin-bottom:9px;line-height:1.5;}
-.sns-ss-item:last-child{margin-bottom:0;}
-.sns-ss-num{
-  width:20px;height:20px;background:var(--fire);color:#fff;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:.6rem;font-weight:900;flex-shrink:0;margin-top:1px;
-}
-#sns-ref-txt{font-size:.72rem;color:#9A7060;padding:0 10px;text-align:center;}
-
-/* ═══ TABLET (600px+) ═══ */
-@media(min-width:600px){
-  #sns-intro{padding:80px 6% 64px;}
-  .sns-pain-grid{grid-template-columns:1fr 1fr;}
-  .sns-intro-btns{flex-direction:row;align-items:center;}
-  .sns-cta-fire{width:auto;}
-  .sns-gets{grid-template-columns:repeat(3,1fr);}
-  .sns-testi-grid{grid-template-columns:1fr 1fr;}
-  .sns-vs{grid-template-columns:1fr 1fr;}
-  .sns-vs-col:first-child{border-right:1px solid var(--border);border-bottom:none;}
-  .sns-img-grid{grid-template-columns:repeat(4,1fr);}
-  #sns-modal{
-    border-radius:8px;
-    align-self:center;
-    max-height:90vh;
+/* =============================================
+   TABLET + DESKTOP
+   ============================================= */
+@media (min-width: 640px) {
+  .sns-h1 { font-size: 52px; }
+  .sns-h2 { font-size: 36px; }
+  .sns-stat-n { font-size: 28px; }
+  .sns-stat-l { font-size: 11px; }
+  .sns-pain-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
   }
-  #sns-modal-bg{align-items:center;padding:20px;}
+  .sns-pain-card { border-bottom: none; border-right: 1px solid var(--border); }
+  .sns-pain-card:nth-child(2n) { border-right: none; }
+  .sns-pain-card:nth-child(n+5) { border-top: 1px solid var(--border); }
+  .sns-intro-btns { flex-direction: row !important; }
+  .sns-btn-fire { width: auto !important; display: inline-flex !important; }
+  .sns-btn-outline { width: auto !important; display: inline-block !important; }
+  .sns-testi-grid { flex-direction: row !important; flex-wrap: wrap !important; }
+  .sns-testi-grid .sns-tc { flex: 1 1 calc(50% - 6px) !important; }
 }
 
-/* ═══ DESKTOP (860px+) ═══ */
-@media(min-width:860px){
-  #sns-bar{font-size:.8rem;}
-  #sns-nav{top:42px;}
-  .sns-pain-grid{grid-template-columns:repeat(3,1fr);}
-  .sns-mech-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;}
-  .sns-cta-layout{display:grid;grid-template-columns:1fr 400px;gap:48px;}
-  .sns-price-card{position:sticky;top:100px;}
-  .sns-mod-row{grid-template-columns:52px 1fr auto;}
-  .sns-mod-badge{display:flex;padding:16px 14px 16px 0;align-items:center;}
-  .sns-mod-badge span{
-    font-size:.62rem;font-weight:800;letter-spacing:.5px;
-    color:var(--green);background:var(--leaf);
-    padding:3px 8px;border-radius:2px;white-space:nowrap;
+@media (min-width: 900px) {
+  #sns-intro { padding: 100px 6% 80px; }
+  #sns-discovery, #sns-mechanism, #sns-solution,
+  #sns-proof, #sns-cta-sec, #sns-faq, #sns-final {
+    padding: 88px 6%;
   }
-  .sns-result-strip{grid-template-columns:repeat(4,1fr);}
-  .sns-testi-grid{grid-template-columns:repeat(4,1fr);}
-  #sns-discovery{padding:88px 6%;}
-  #sns-mechanism{padding:88px 6%;}
-  #sns-solution{padding:88px 6%;}
-  #sns-proof{padding:88px 6%;}
-  #sns-cta-sec{padding:88px 6%;}
-  #sns-faq{padding:72px 6%;}
-  #sns-final{padding:88px 6%;}
+  .sns-h1 { font-size: 72px; }
+  .sns-h2 { font-size: 44px; }
+  .sns-pain-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .sns-pain-card:nth-child(n+4) { border-top: 1px solid var(--border); }
+  .sns-mech-layout {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 48px;
+  }
+  .sns-result-strip { grid-template-columns: repeat(4, 1fr) !important; }
+  .sns-img-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .sns-testi-grid { flex-direction: row !important; }
+  .sns-testi-grid .sns-tc { flex: 1 !important; }
+  .sns-cta-layout {
+    display: grid !important;
+    grid-template-columns: 1fr 400px !important;
+    gap: 48px;
+    align-items: start;
+  }
+  .sns-price-card { position: sticky; top: 100px; }
+  .sns-mod-row { grid-template-columns: 52px 1fr auto !important; }
+  .sns-mod-badge {
+    display: flex !important;
+    padding: 14px 14px 14px 0;
+    align-items: center;
+  }
+  .sns-mod-badge span {
+    font-size: 10px; font-weight: 800;
+    color: var(--green); background: var(--leaf);
+    padding: 3px 8px; border-radius: 2px; white-space: nowrap;
+  }
+  .sns-gets { grid-template-columns: repeat(3, 1fr) !important; }
+  .sns-modal-bg { align-items: center; }
+  #sns-modal {
+    border-radius: 8px;
+    max-width: 440px;
+    padding: 36px 32px;
+  }
+  .sns-modal-handle { display: none; }
+  #sns-modal-bg { align-items: center; }
 }
 </style>
-
+</head>
+<body>
 <div id="sns">
 
 <!-- URGENCY BAR -->
@@ -676,197 +866,163 @@ src="https://www.facebook.com/tr?id=836627435951529&ev=PageView&noscript=1"/></n
 
 <!-- NAV -->
 <nav id="sns-nav">
-  <div class="sns-logo">Shape & Shine</div>
+  <div class="sns-logo">Shape &amp; Shine</div>
   <button class="sns-nav-btn" onclick="snsOpen()">Get Access — ₦7,500</button>
 </nav>
 
-<!-- ═══ SECTION 1: INTRO ═══ -->
+<!-- ═══ INTRO ═══ -->
 <section id="sns-intro">
-  <div class="sns-intro-glow"></div>
-  <div class="sns-intro-glow2"></div>
-  <div class="sns-intro-inner">
-    <div class="sns-tag sns-tag-gold">Nigeria's #1 Body Transformation Course for Women</div>
-    <h1 class="sns-h1">
-      You've been trying to lose weight the <mark>wrong way</mark> your whole life.<br>
-      <em>Here's why — and what works.</em>
-    </h1>
-    <p class="sns-intro-sub">
-      Every diet you've tried was designed for someone living a completely different life. Shape & Shine is the first weight loss course built entirely around Nigerian food, Nigerian hormones, and the Nigerian woman's real world.
-    </p>
-    <div class="sns-intro-proof">
-      <div class="sns-intro-stat"><span class="n">500+</span><span class="l">Enrolled</span></div>
-      <div class="sns-intro-stat"><span class="n">12</span><span class="l">Weeks</span></div>
-      <div class="sns-intro-stat"><span class="n">8</span><span class="l">Modules</span></div>
-      <div class="sns-intro-stat"><span class="n">0</span><span class="l">Starvation</span></div>
-    </div>
-    <div class="sns-intro-btns">
-      <button class="sns-cta-fire" onclick="snsOpen()">Yes, I Want This — ₦7,500 →</button>
-      <button class="sns-cta-outline" onclick="document.getElementById('sns-discovery').scrollIntoView({behavior:'smooth'})">Show me why first ↓</button>
-    </div>
-    <div class="sns-trust-row sns-trust-row-dark">
-      <span>🔒 7-day money-back guarantee</span>
-      <span class="sns-trust-dot"></span>
-      <span>Instant access after payment</span>
-      <span class="sns-trust-dot"></span>
-      <span>Paystack or Flutterwave</span>
-    </div>
+  <div class="sns-glow1"></div>
+  <div class="sns-tag sns-tag-gold">Nigeria's #1 Body Transformation Course for Women</div>
+  <h1 class="sns-h1">
+    You've been trying to lose weight the <mark>wrong way</mark> your whole life.
+    <em>Here's why — and what works.</em>
+  </h1>
+  <p class="sns-intro-sub">Every diet you've tried was designed for someone living a completely different life. Shape &amp; Shine is the first weight loss course built entirely around Nigerian food, Nigerian hormones, and the Nigerian woman's real world.</p>
+  <div class="sns-stats">
+    <div><span class="sns-stat-n">500+</span><span class="sns-stat-l">Women Enrolled</span></div>
+    <div><span class="sns-stat-n">12</span><span class="sns-stat-l">Week Plan</span></div>
+    <div><span class="sns-stat-n">8</span><span class="sns-stat-l">Modules</span></div>
+    <div><span class="sns-stat-n">0</span><span class="sns-stat-l">Starvation</span></div>
   </div>
+  <div class="sns-intro-btns">
+    <button class="sns-btn-fire" onclick="snsOpen()">Yes, I Want This — ₦7,500 →</button>
+    <button class="sns-btn-outline" onclick="document.getElementById('sns-discovery').scrollIntoView({behavior:'smooth'})">Show me why first ↓</button>
+  </div>
+  <p class="sns-trust">🔒 7-day money-back guarantee &nbsp;·&nbsp; Instant access &nbsp;·&nbsp; Paystack or Flutterwave</p>
 </section>
 
-<!-- ═══ SECTION 2: DISCOVERY ═══ -->
+<!-- ═══ DISCOVERY ═══ -->
 <section id="sns-discovery">
   <div class="sns-wrap">
     <div class="sns-tag sns-tag-fire">Sound Familiar?</div>
     <h2 class="sns-h2">You're not the problem.<br>The plan was.</h2>
     <p class="sns-body">Every Nigerian woman who has "failed" at weight loss was handed a system never designed for her. Before you blame yourself one more time — read this.</p>
     <div class="sns-pain-grid">
-      <div class="sns-pain-card"><span class="sns-pain-icon">😩</span><h3>"I've tried every diet and nothing sticks"</h3><p>Keto, intermittent fasting, skipping rice — every plan assumed you live a completely different life. None accounted for jollof at a party, eba after church, or suya on a Friday night.</p></div>
+      <div class="sns-pain-card"><span class="sns-pain-icon">😩</span><h3>"I've tried every diet and nothing sticks"</h3><p>Keto, fasting, skipping rice — every plan assumed you live a completely different life. None accounted for jollof at a party, eba after church, or suya on a Friday night.</p></div>
       <div class="sns-pain-card"><span class="sns-pain-icon">🍽️</span><h3>"They tell me to give up my food"</h3><p>Quinoa. Chicken breast. Salads. No swallow, no rice, no culture. You can't sustain a life stripped of everything that brings you joy — and you shouldn't have to.</p></div>
       <div class="sns-pain-card"><span class="sns-pain-icon">⚖️</span><h3>"The scale won't move no matter what"</h3><p>You're dieting, you're trying — but the weight stays. This is almost always hormonal: PCOS, thyroid, insulin resistance. Not one previous plan ever addressed this.</p></div>
-      <div class="sns-pain-card"><span class="sns-pain-icon">🎉</span><h3>"One owambe destroys a month of progress"</h3><p>Nigerian social life is built around food. Weddings, naming ceremonies, church events — you need a strategy that works inside your actual life, not one that collapses at the first party.</p></div>
+      <div class="sns-pain-card"><span class="sns-pain-icon">🎉</span><h3>"One owambe destroys a month of progress"</h3><p>Nigerian social life is built around food. Weddings, naming ceremonies, church events — you need a strategy that works inside your actual life, not against it.</p></div>
       <div class="sns-pain-card"><span class="sns-pain-icon">💬</span><h3>"The family comments are killing me"</h3><p>"You've added o!" from aunties. "Are you okay?" from your mum. The opinions never stop. You deserve to feel powerful in your own body — on your own terms.</p></div>
       <div class="sns-pain-card"><span class="sns-pain-icon">⏰</span><h3>"I carry too much to carry a diet too"</h3><p>Work, children, cooking for the family, extended obligations. You're already doing the work of three people. Your health plan needs to work with your life — not add to its weight.</p></div>
     </div>
     <div class="sns-bridge">
       <h3>"What if none of this was ever your fault — and there's a system finally built for you?"</h3>
-      <p>That is exactly what Shape & Shine is. Not another Western plan with a Nigerian flag slapped on it. A course built from the ground up for how you actually live, eat, and exist.</p>
+      <p>That is exactly what Shape &amp; Shine is. Not another Western plan with a Nigerian flag slapped on it. A course built from the ground up for how you actually live, eat, and exist.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══ SECTION 3: MECHANISM ═══ -->
+<!-- ═══ MECHANISM ═══ -->
 <section id="sns-mechanism">
   <div class="sns-wrap">
     <div class="sns-tag sns-tag-fire">The Real Reason</div>
-    <h2 class="sns-h2">Why Nigerian women struggle to lose weight — and keep it off</h2>
-    <div class="sns-mech-grid">
-      <div class="sns-mech-left">
-        <p class="sns-body">It is not willpower. It is not laziness. It is a combination of biological, cultural, and environmental factors no generic diet ever addresses.</p>
+    <h2 class="sns-h2">Why Nigerian women struggle to lose weight</h2>
+    <p class="sns-body">It is not willpower. It is not laziness. It is a combination of biological, cultural, and environmental factors no generic diet ever addresses.</p>
+    <div class="sns-mech-layout">
+      <div>
         <div class="sns-vs">
           <div class="sns-vs-col">
             <div class="sns-vs-label">❌ Every Plan You've Tried</div>
-            <div class="sns-vs-item"><span class="vi">✗</span>Built for Western food and bodies</div>
-            <div class="sns-vs-item"><span class="vi">✗</span>Ignores PCOS and hormonal resistance</div>
-            <div class="sns-vs-item"><span class="vi">✗</span>Eliminates your entire food culture</div>
-            <div class="sns-vs-item"><span class="vi">✗</span>Collapses at the first party or event</div>
-            <div class="sns-vs-item"><span class="vi">✗</span>Assumes you have hours to meal prep</div>
-            <div class="sns-vs-item"><span class="vi">✗</span>Unsustainable after 2–3 weeks</div>
+            <div class="sns-vs-item"><span>✗</span> Built for Western food and bodies</div>
+            <div class="sns-vs-item"><span>✗</span> Ignores PCOS and hormonal resistance</div>
+            <div class="sns-vs-item"><span>✗</span> Eliminates your entire food culture</div>
+            <div class="sns-vs-item"><span>✗</span> Collapses at the first party or event</div>
+            <div class="sns-vs-item"><span>✗</span> Assumes you have hours to meal prep</div>
+            <div class="sns-vs-item"><span>✗</span> Unsustainable after 2–3 weeks</div>
           </div>
           <div class="sns-vs-col">
-            <div class="sns-vs-label">✓ The Shape & Shine System</div>
-            <div class="sns-vs-item"><span class="vi">✓</span>Built entirely around Nigerian cuisine</div>
-            <div class="sns-vs-item"><span class="vi">✓</span>Full module on PCOS, thyroid & hormones</div>
-            <div class="sns-vs-item"><span class="vi">✓</span>Your food stays — portions and approach change</div>
-            <div class="sns-vs-item"><span class="vi">✓</span>Owambe and party survival strategy included</div>
-            <div class="sns-vs-item"><span class="vi">✓</span>30 minutes a day, 4 days a week — that's all</div>
-            <div class="sns-vs-item"><span class="vi">✓</span>A lifestyle plan you can sustain for life</div>
+            <div class="sns-vs-label">✓ The Shape &amp; Shine System</div>
+            <div class="sns-vs-item"><span>✓</span> Built entirely around Nigerian cuisine</div>
+            <div class="sns-vs-item"><span>✓</span> Full module on PCOS, thyroid &amp; hormones</div>
+            <div class="sns-vs-item"><span>✓</span> Your food stays — approach and portions change</div>
+            <div class="sns-vs-item"><span>✓</span> Owambe and party survival strategy included</div>
+            <div class="sns-vs-item"><span>✓</span> 30 minutes a day, 4 days a week — that's all</div>
+            <div class="sns-vs-item"><span>✓</span> A lifestyle plan you can sustain for life</div>
           </div>
         </div>
       </div>
-      <div class="sns-mech-right">
-        <div class="sns-reason-card"><div class="sns-rc-num">01</div><div class="sns-rc-body"><h4>Your hormones are working against you</h4><p>Up to 1 in 6 Nigerian women have PCOS — most undiagnosed. PCOS causes insulin resistance and makes fat loss dramatically harder. We have an entire module dedicated to it.</p></div></div>
-        <div class="sns-reason-card"><div class="sns-rc-num">02</div><div class="sns-rc-body"><h4>Your portions were never calibrated for Nigerian food</h4><p>Eba, jollof, egusi, plantain — calorie-dense foods eaten in large portions without context. The fix is not elimination — it's the plate method designed for Nigerian meals.</p></div></div>
+      <div class="sns-reasons">
+        <div class="sns-reason-card"><div class="sns-rc-num">01</div><div class="sns-rc-body"><h4>Your hormones are working against you</h4><p>Up to 1 in 6 Nigerian women have PCOS — most undiagnosed. PCOS causes insulin resistance and makes fat loss dramatically harder. We have a full module dedicated to it.</p></div></div>
+        <div class="sns-reason-card"><div class="sns-rc-num">02</div><div class="sns-rc-body"><h4>Your portions were never calibrated for Nigerian food</h4><p>Eba, jollof, egusi, plantain — calorie-dense foods eaten without context. The fix is not elimination — it's the plate method designed for Nigerian meals.</p></div></div>
         <div class="sns-reason-card"><div class="sns-rc-num">03</div><div class="sns-rc-body"><h4>Chronic stress is storing fat on your belly</h4><p>Cortisol signals your body to store fat around the abdomen. The Nigerian woman's stress load is a direct driver of weight gain that no calorie counter addresses.</p></div></div>
-        <div class="sns-reason-card"><div class="sns-rc-num">04</div><div class="sns-rc-body"><h4>You've been exercising the wrong way</h4><p>Hours of cardio with no strength training burns muscle and slows your metabolism. Nigerian women need a specific combination of strength and movement — not gym punishment.</p></div></div>
+        <div class="sns-reason-card"><div class="sns-rc-num">04</div><div class="sns-rc-body"><h4>You've been exercising the wrong way</h4><p>Hours of cardio with no strength training burns muscle and slows your metabolism. Nigerian women need a specific combination — not gym punishment.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ SECTION 4: SOLUTION ═══ -->
+<!-- ═══ SOLUTION ═══ -->
 <section id="sns-solution">
   <div class="sns-wrap">
     <div class="sns-tag sns-tag-fire">The Solution</div>
-    <div class="sns-sol-intro">
-      <h2 class="sns-h2">Introducing Shape & Shine — built for you, finally.</h2>
-      <p class="sns-body">8 comprehensive modules designed to address every real reason Nigerian women struggle to lose weight. Not a PDF guide. A complete transformation system.</p>
-    </div>
+    <h2 class="sns-h2">Introducing Shape &amp; Shine — built for you, finally.</h2>
+    <p class="sns-body">8 comprehensive modules that address every real reason Nigerian women struggle. Not a PDF. A complete transformation system.</p>
     <div class="sns-modules">
-      <div class="sns-mod-row"><div class="sns-mod-n">00</div><div class="sns-mod-body"><h4>Welcome & Setting Up for Success</h4><p>Baseline measurements, mindset foundations, goal-setting, and your personal 12-week roadmap.</p></div><div class="sns-mod-badge"><span>Start Here</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">01</div><div class="sns-mod-body"><h4>Nutrition & Nigerian Foods</h4><p>Jollof, eba, egusi, suya — all included. Full calorie guide, the plate method, portion control without suffering.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">02</div><div class="sns-mod-body"><h4>Exercise & Movement — No Gym Required</h4><p>Home workout circuits, Afrobeats cardio, glute-building routines. 30 minutes, 4× a week. No equipment.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">03</div><div class="sns-mod-body"><h4>7-Day Nigerian Meal Plan + Swaps Guide</h4><p>A full week of real meals — breakfast, lunch, dinner, snacks. Every meal Nigerian. Every swap included.</p></div><div class="sns-mod-badge"><span>★ Bonus</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">04</div><div class="sns-mod-body"><h4>Mindset, Emotional Eating & Owambe Life</h4><p>Mental tools to stay on track through parties, family pressure, stress eating, and Nigerian social life.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">05</div><div class="sns-mod-body"><h4>Hormones — PCOS, Thyroid, Postpartum & Menopause</h4><p>The module that changes everything. Why your body fights fat loss — and exactly what to do about it.</p></div><div class="sns-mod-badge"><span>★ Most Loved</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">06</div><div class="sns-mod-body"><h4>Daily Habits, Sleep & the 80/20 Rule</h4><p>Morning routines, sleep optimisation, navigating celebrations. Habits that compound into visible results.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">07</div><div class="sns-mod-body"><h4>Your 12-Week Transformation Blueprint</h4><p>Week-by-week action plan. Myth-busting. Progress tracking. Your permanent lifestyle blueprint.</p></div><div class="sns-mod-badge"><span>Blueprint</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">00</div><div class="sns-mod-body"><h4>Welcome &amp; Setting Up for Success</h4><p>Measurements, mindset, goal-setting and your personal 12-week roadmap.</p></div><div class="sns-mod-badge"><span>Start Here</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">01</div><div class="sns-mod-body"><h4>Nutrition &amp; Nigerian Foods</h4><p>Jollof, eba, egusi, suya — all included. Calorie guide, plate method, portions.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">02</div><div class="sns-mod-body"><h4>Exercise &amp; Movement — No Gym Required</h4><p>Home circuits, Afrobeats cardio, glute-building. 30 minutes, 4× a week.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">03</div><div class="sns-mod-body"><h4>7-Day Nigerian Meal Plan + Swaps</h4><p>Full week mapped — breakfast, lunch, dinner, snacks. Every meal Nigerian.</p></div><div class="sns-mod-badge"><span>★ Bonus</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">04</div><div class="sns-mod-body"><h4>Mindset, Emotional Eating &amp; Owambe Life</h4><p>Mental tools to stay on track through parties, family pressure, and real life.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">05</div><div class="sns-mod-body"><h4>Hormones — PCOS, Thyroid, Postpartum &amp; Menopause</h4><p>The module that changes everything. Why your body fights fat loss — and what to do.</p></div><div class="sns-mod-badge"><span>★ Most Loved</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">06</div><div class="sns-mod-body"><h4>Daily Habits, Sleep &amp; the 80/20 Rule</h4><p>Morning routines, sleep optimisation, surviving celebrations without guilt.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">07</div><div class="sns-mod-body"><h4>Your 12-Week Transformation Blueprint</h4><p>Week-by-week plan. Myth-busting. Progress tracking. Your forever lifestyle plan.</p></div><div class="sns-mod-badge"><span>Blueprint</span></div></div>
     </div>
     <div class="sns-gets">
-      <div class="sns-get-item"><div class="sns-get-icon">📱</div><div><h4>Instant Access</h4><p>On your phone immediately after payment.</p></div></div>
-      <div class="sns-get-item"><div class="sns-get-icon">♾️</div><div><h4>Lifetime Access</h4><p>Revisit any module, any time, forever.</p></div></div>
-      <div class="sns-get-item"><div class="sns-get-icon">🍽️</div><div><h4>Nigerian Food Only</h4><p>Every example uses food you actually eat.</p></div></div>
-      <div class="sns-get-item"><div class="sns-get-icon">🏠</div><div><h4>No Gym Needed</h4><p>All workouts designed for home, zero equipment.</p></div></div>
-      <div class="sns-get-item"><div class="sns-get-icon">🧬</div><div><h4>Hormone-Aware</h4><p>PCOS, thyroid, postpartum — fully covered.</p></div></div>
-      <div class="sns-get-item"><div class="sns-get-icon">🛡️</div><div><h4>7-Day Guarantee</h4><p>Full refund within 7 days, no questions.</p></div></div>
+      <div class="sns-get-item"><div class="sns-get-icon">📱</div><div><h4>Instant Access</h4><p>On your phone right after payment.</p></div></div>
+      <div class="sns-get-item"><div class="sns-get-icon">♾️</div><div><h4>Lifetime Access</h4><p>Revisit any module forever.</p></div></div>
+      <div class="sns-get-item"><div class="sns-get-icon">🍽️</div><div><h4>Nigerian Food Only</h4><p>Every example uses real Nigerian meals.</p></div></div>
+      <div class="sns-get-item"><div class="sns-get-icon">🏠</div><div><h4>No Gym Needed</h4><p>All workouts at home, zero equipment.</p></div></div>
+      <div class="sns-get-item"><div class="sns-get-icon">🧬</div><div><h4>Hormone-Aware</h4><p>PCOS, thyroid, postpartum covered.</p></div></div>
+      <div class="sns-get-item"><div class="sns-get-icon">🛡️</div><div><h4>7-Day Guarantee</h4><p>Full refund, no questions asked.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ SECTION 5: PROOF ═══ -->
+<!-- ═══ PROOF ═══ -->
 <section id="sns-proof">
   <div class="sns-wrap">
     <div class="sns-tag sns-tag-white">Real Results</div>
-    <h2 class="sns-h2">Women who were exactly<br>where you are now.</h2>
+    <h2 class="sns-h2">Women who were exactly where you are now.</h2>
     <p class="sns-body-sm">Nigerian women. Real cities. Real food. Real results.</p>
-
     <div class="sns-result-strip">
       <div class="sns-result-item"><span class="sns-result-num">500+</span><span class="sns-result-label">Women Enrolled</span></div>
       <div class="sns-result-item"><span class="sns-result-num">9kg</span><span class="sns-result-label">Avg Weight Lost</span></div>
-      <div class="sns-result-item"><span class="sns-result-num">12wk</span><span class="sns-result-label">Full Transformation</span></div>
-      <div class="sns-result-item"><span class="sns-result-num">4.9★</span><span class="sns-result-label">Average Rating</span></div>
+      <div class="sns-result-item"><span class="sns-result-num">12wk</span><span class="sns-result-label">Transformation</span></div>
+      <div class="sns-result-item"><span class="sns-result-num">4.9★</span><span class="sns-result-label">Avg Rating</span></div>
     </div>
-
-    <div class="sns-img-note">
-      <strong>👇 Replace these with your real transformation photos</strong> — authentic images convert 3–5× better than placeholders.
-    </div>
-
+    <div class="sns-img-note"><strong>👇 Your real transformation photos go here</strong> — replace these with actual before/after images from course members.</div>
     <div class="sns-img-grid">
       <div class="sns-img-card">
-        <img src="https://res.cloudinary.com/dhgedmsrb/image/upload/v1781880858/Adaeze.JPG_ggieio.jpg" alt="Adaeze transformation" loading="lazy">
-        <div class="sns-img-overlay">
-          <div class="sns-img-label">Adaeze · Port Harcourt</div>
-          <div class="sns-img-result">Lost 9kg</div>
-        </div>
+        <img src="https://res.cloudinary.com/dhgedmsrb/image/upload/v1781880858/Adaeze.JPG_ggieio.jpg" alt="Adaeze" loading="lazy">
+        <div class="sns-img-overlay"><span class="sns-img-label">Adaeze · Port Harcourt</span><span class="sns-img-result">Lost 9kg</span></div>
       </div>
       <div class="sns-img-card">
-        <img src="https://res.cloudinary.com/dhgedmsrb/image/upload/v1781881855/Funmi.JPG_n7tlqq.jpg" alt="Funmi transformation" loading="lazy">
-        <div class="sns-img-overlay">
-          <div class="sns-img-label">Funmi · Lagos</div>
-          <div class="sns-img-result">2 Dress Sizes</div>
-        </div>
+        <img src="https://res.cloudinary.com/dhgedmsrb/image/upload/v1781881855/Funmi.JPG_n7tlqq.jpg" alt="Funmi" loading="lazy">
+        <div class="sns-img-overlay"><span class="sns-img-label">Funmi · Lagos</span><span class="sns-img-result">2 Dress Sizes</span></div>
       </div>
       <div class="sns-img-card">
-        <img src="https://res.cloudinary.com/dhgedmsrb/image/upload/v1781895879/Ngozi.JPG_c0resd.jpg" alt="Ngozi transformation" loading="lazy">
-        <div class="sns-img-overlay">
-          <div class="sns-img-label">Ngozi · Abuja</div>
-          <div class="sns-img-result">Postpartum Win</div>
-        </div>
+        <img src="https://res.cloudinary.com/dhgedmsrb/image/upload/v1781895879/Ngozi.JPG_c0resd.jpg" alt="Ngozi" loading="lazy">
+        <div class="sns-img-overlay"><span class="sns-img-label">Ngozi · Abuja</span><span class="sns-img-result">Postpartum Win</span></div>
       </div>
       <div class="sns-img-card">
-        <img src="https://res.cloudinary.com/dhgedmsrb/image/upload/v1781895971/Blessing.JPG_cuvels.jpg" alt="Blessing transformation" loading="lazy">
-        <div class="sns-img-overlay">
-          <div class="sns-img-label">Blessing · Enugu</div>
-          <div class="sns-img-result">Lost 6kg</div>
-        </div>
+        <img src="https://res.cloudinary.com/dhgedmsrb/image/upload/v1781895971/Blessing.JPG_cuvels.jpg" alt="Blessing" loading="lazy">
+        <div class="sns-img-overlay"><span class="sns-img-label">Blessing · Enugu</span><span class="sns-img-result">Lost 6kg</span></div>
       </div>
     </div>
-
     <div class="sns-testi-grid">
-      <div class="sns-tc"><div class="sns-tc-stars">★★★★★</div><p class="sns-tc-quote">"I lost 9kg in 10 weeks without giving up my jollof or suya nights. The hormone module explained why I had struggled with PCOS for 4 years. I cried reading it. This course finally made me feel understood."</p><div class="sns-tc-name">Adaeze O.</div><div class="sns-tc-meta">Port Harcourt · Lost 9kg in 10 weeks</div></div>
-      <div class="sns-tc"><div class="sns-tc-stars">★★★★★</div><p class="sns-tc-quote">"I'm a Lagos mum of 3. Zero time, zero energy, endless excuses. The 30-minute home workouts changed everything. Down 2 dress sizes in 3 months. My husband keeps looking at me like he did when we first met."</p><div class="sns-tc-name">Funmi A.</div><div class="sns-tc-meta">Lagos Island · 2 dress sizes in 3 months</div></div>
-      <div class="sns-tc"><div class="sns-tc-stars">★★★★★</div><p class="sns-tc-quote">"After my second baby I thought my body was just gone. The postpartum module gave me a realistic roadmap. Eight months later I have my shape back — better, because I'm stronger than I've ever been."</p><div class="sns-tc-name">Ngozi E.</div><div class="sns-tc-meta">Abuja · Postpartum recovery at 8 months</div></div>
-      <div class="sns-tc"><div class="sns-tc-stars">★★★★★</div><p class="sns-tc-quote">"I still eat eba. I still eat rice at parties. I just eat it differently. Down 6kg and my blood sugar has been stable for the first time in three years. This course paid for itself in the first week."</p><div class="sns-tc-name">Blessing I.</div><div class="sns-tc-meta">Enugu · 6kg lost, blood sugar stabilised</div></div>
+      <div class="sns-tc"><div class="sns-tc-stars">★★★★★</div><p class="sns-tc-quote">"I lost 9kg in 10 weeks without giving up my jollof or suya nights. The hormone module explained why I'd struggled with PCOS for 4 years. I cried reading it. Finally someone understood me."</p><div class="sns-tc-name">Adaeze O.</div><div class="sns-tc-meta">Port Harcourt · Lost 9kg in 10 weeks</div></div>
+      <div class="sns-tc"><div class="sns-tc-stars">★★★★★</div><p class="sns-tc-quote">"I'm a Lagos mum of 3. Zero time, zero energy. The 30-minute home workouts changed everything. Down 2 dress sizes in 3 months. My husband keeps looking at me like he did when we first met."</p><div class="sns-tc-name">Funmi A.</div><div class="sns-tc-meta">Lagos Island · 2 dress sizes in 3 months</div></div>
+      <div class="sns-tc"><div class="sns-tc-stars">★★★★★</div><p class="sns-tc-quote">"After my second baby I thought my shape was gone forever. The postpartum module gave me a real roadmap. Eight months later I have my body back — stronger than ever."</p><div class="sns-tc-name">Ngozi E.</div><div class="sns-tc-meta">Abuja · Postpartum recovery</div></div>
+      <div class="sns-tc"><div class="sns-tc-stars">★★★★★</div><p class="sns-tc-quote">"I still eat eba. I still eat rice at parties. I just eat it differently. Down 6kg and my blood sugar is stable for the first time in three years. This course paid for itself in week one."</p><div class="sns-tc-name">Blessing I.</div><div class="sns-tc-meta">Enugu · 6kg lost</div></div>
     </div>
-
-    <div style="text-align:center;">
-      <button class="sns-cta-fire" style="margin:0 auto;" onclick="snsOpen()">I'm Ready — Get My Access Now →</button>
-    </div>
+    <button class="sns-btn-fire" style="max-width:400px;margin:0 auto;display:block;" onclick="snsOpen()">I'm Ready — Get My Access Now →</button>
   </div>
 </section>
 
 <!-- COUNTDOWN -->
 <div id="sns-cd">
-  <div class="cdl">Launch price closes in</div>
+  <div class="sns-cd-label">Launch price closes in</div>
   <div class="sns-clocks">
     <div class="sns-cb"><span class="sns-cn" id="sns-ch">23</span><span class="sns-cu">Hours</span></div>
     <div class="sns-csep">:</div>
@@ -876,47 +1032,43 @@ src="https://www.facebook.com/tr?id=836627435951529&ev=PageView&noscript=1"/></n
   </div>
 </div>
 
-<!-- ═══ SECTION 6: CTA ═══ -->
+<!-- ═══ CTA ═══ -->
 <section id="sns-cta-sec">
   <div class="sns-wrap">
     <div class="sns-cta-layout">
-      <div class="sns-cta-left">
+      <div>
         <div class="sns-tag sns-tag-fire">Your Decision</div>
         <h2 class="sns-h2">The only thing between you and the body you want is today's decision.</h2>
         <div class="sns-urgency-strip">⏰ <b>Launch price of ₦7,500 closes soon.</b> After this window, the price returns to ₦20,000. This is your last chance at this price.</div>
         <ul class="sns-checklist">
-          <li><div class="sns-chk-icon">✓</div>You've read this far because something in you knows this is different</li>
-          <li><div class="sns-chk-icon">✓</div>₦7,500 is one dinner out — this will change 12 weeks of your life</li>
-          <li><div class="sns-chk-icon">✓</div>You get instant access the moment payment clears</li>
-          <li><div class="sns-chk-icon">✓</div>If it's not right, you get every kobo back within 7 days</li>
-          <li><div class="sns-chk-icon">✓</div>500+ women already inside — you won't figure this out alone</li>
-          <li><div class="sns-chk-icon">✓</div>One year from now, you'll wish you had started today</li>
+          <li><div class="sns-chk">✓</div>You've read this far because something in you knows this is different</li>
+          <li><div class="sns-chk">✓</div>₦7,500 is one dinner out — this will change 12 weeks of your life</li>
+          <li><div class="sns-chk">✓</div>You get instant access the moment payment clears</li>
+          <li><div class="sns-chk">✓</div>If it's not right, you get every kobo back within 7 days</li>
+          <li><div class="sns-chk">✓</div>500+ women already inside — you won't figure this out alone</li>
+          <li><div class="sns-chk">✓</div>One year from now, you'll wish you had started today</li>
         </ul>
         <div class="sns-guar-mini">
           <span class="gi">🛡️</span>
-          <div>
-            <h4>7-Day Money-Back Guarantee</h4>
-            <p>Go through the first module. If you don't feel this was built specifically for you, email us within 7 days for a full, no-questions refund. Every kobo back. That is our promise.</p>
-          </div>
+          <div><h4>7-Day Money-Back Guarantee</h4><p>Go through Module 1. If you don't feel this was built specifically for you, email us within 7 days for a full no-questions refund. Every kobo back.</p></div>
         </div>
       </div>
-
       <div class="sns-price-card">
         <div class="sns-pc-top">
-          <div class="eyebrow">Complete Course Bundle</div>
-          <h3>Shape & Shine — Full Program</h3>
+          <div class="sns-pc-eyebrow">Complete Course Bundle</div>
+          <h3>Shape &amp; Shine — Full Program</h3>
         </div>
         <div class="sns-pc-body">
           <span class="sns-was">Regular price: ₦20,000</span>
-          <div class="sns-price"><sup>₦</sup>7,500</div>
-          <div class="sns-price-note">One-time payment · Lifetime access · Instant delivery to your email</div>
+          <div class="sns-price-big"><sup>₦</sup>7,500</div>
+          <div class="sns-price-note">One-time · Lifetime access · Instant delivery to your email</div>
           <ul class="sns-incl">
             <li>All 8 course modules — instant access</li>
             <li>12-Week transformation blueprint</li>
-            <li>7-Day Nigerian meal plan (print-ready)</li>
+            <li>7-Day Nigerian meal plan</li>
             <li>Nigerian food calorie guide</li>
             <li>Home workout circuit plans</li>
-            <li>PCOS & hormone deep-dive module</li>
+            <li>PCOS &amp; hormone deep-dive module</li>
             <li>Lifetime access — yours forever</li>
             <li>7-day money-back guarantee</li>
           </ul>
@@ -927,7 +1079,7 @@ src="https://www.facebook.com/tr?id=836627435951529&ev=PageView&noscript=1"/></n
               <div class="sns-or">— or —</div>
               <button class="sns-pbtn sns-pbtn-fw" onclick="snsOpen('flutterwave')">🌊 Pay with Flutterwave</button>
             </div>
-            <div class="sns-secure">🔒 256-bit SSL · Safe & encrypted checkout</div>
+            <div class="sns-secure">🔒 256-bit SSL · Safe &amp; encrypted checkout</div>
           </div>
         </div>
       </div>
@@ -937,34 +1089,33 @@ src="https://www.facebook.com/tr?id=836627435951529&ev=PageView&noscript=1"/></n
 
 <!-- FAQ -->
 <section id="sns-faq">
-  <h3 class="sns-h3" style="text-align:center;">Still have questions?</h3>
-  <div class="sns-faq-list">
-    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">Will I have to give up Nigerian food?<span class="sns-farr">+</span></button><div class="sns-fa">Never. This course was built entirely around Nigerian cuisine. Jollof rice, eba, egusi, suya, plantain — all of it stays. The transformation is in how you approach it, not what you eat.</div></div>
-    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">I have PCOS. Will this actually help me?<span class="sns-farr">+</span></button><div class="sns-fa">Module 5 is dedicated entirely to PCOS, thyroid dysfunction, postpartum weight, and perimenopausal changes. It explains, often for the first time, why a woman's body behaves the way it does — and exactly what to do about it.</div></div>
-    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">How quickly will I see results?<span class="sns-farr">+</span></button><div class="sns-fa">Most women notice more energy and less bloating within 2 weeks. Visible body changes around week 4–6. Significant transformation by week 12. Healthy fat loss is 0.5–1kg per week — 6–12kg in 12 weeks is realistic without starvation.</div></div>
-    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">I'm a busy mum. Do I have time for this?<span class="sns-farr">+</span></button><div class="sns-fa">Workouts are 30 minutes, 3–4 times per week. No gym. No equipment. The entire course was designed around women who have no spare time — because most Nigerian women don't.</div></div>
-    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">How do I get access after paying?<span class="sns-farr">+</span></button><div class="sns-fa">Immediately after payment, a delivery email is sent to the address you entered. It contains your login link and access instructions. You can start Module 1 within minutes of paying.</div></div>
-    <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">What if I want a refund?<span class="sns-farr">+</span></button><div class="sns-fa">7-day no-questions-asked refund. Go through Module 1. If you don't feel this was built for you, email us and receive every kobo back within 24 hours.</div></div>
+  <div class="sns-wrap">
+    <h3 class="sns-h3">Still have questions?</h3>
+    <div class="sns-faq-wrap">
+      <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">Will I have to give up Nigerian food?<span class="sns-farr">+</span></button><div class="sns-fa">Never. Jollof rice, eba, egusi, suya, plantain — all of it stays. The transformation is in how you approach it, not what you eat.</div></div>
+      <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">I have PCOS. Will this help me?<span class="sns-farr">+</span></button><div class="sns-fa">Module 5 is dedicated entirely to PCOS, thyroid, postpartum, and perimenopausal changes. It explains, often for the first time, why your body behaves the way it does — and exactly what to do about it.</div></div>
+      <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">How quickly will I see results?<span class="sns-farr">+</span></button><div class="sns-fa">Most women notice more energy and less bloating within 2 weeks. Visible changes around week 4–6. Significant transformation by week 12. Healthy fat loss is 0.5–1kg per week.</div></div>
+      <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">I'm a busy mum. Do I have time for this?<span class="sns-farr">+</span></button><div class="sns-fa">Workouts are 30 minutes, 3–4 times per week. No gym. No equipment. Built entirely for women who have no spare time — because most Nigerian women don't.</div></div>
+      <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">How do I access the course after paying?<span class="sns-farr">+</span></button><div class="sns-fa">Immediately after payment, an email with your login link is sent to the address you entered. You can start Module 1 within minutes.</div></div>
+      <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">What if I want a refund?<span class="sns-farr">+</span></button><div class="sns-fa">7-day no-questions-asked refund. Email us within 7 days and receive every kobo back within 24 hours.</div></div>
+    </div>
   </div>
 </section>
 
 <!-- FINAL PUSH -->
 <section id="sns-final">
-  <h2 class="sns-h2">One year from now, you will either be living in the body you want — or wishing you had started today.</h2>
-  <p class="sns-body-sm">The decision is yours. But the price won't stay here forever.</p>
-  <button class="sns-cta-fire" style="margin:0 auto;" onclick="snsOpen()">Get Instant Access — ₦7,500 →</button>
-  <div class="sns-trust-row" style="justify-content:center;margin-top:16px;color:#4A2010;">
-    <span>🔒 Secure checkout</span>
-    <span class="sns-trust-dot" style="background:#4A2010;"></span>
-    <span>7-day refund guarantee</span>
-    <span class="sns-trust-dot" style="background:#4A2010;"></span>
-    <span>Instant email delivery</span>
+  <div class="sns-wrap">
+    <h2 class="sns-h2">One year from now, you will either be living in the body you want — or wishing you had started today.</h2>
+    <p class="sns-body-sm">The decision is yours. But the price won't stay here forever.</p>
+    <button class="sns-btn-fire" style="max-width:400px;margin:0 auto;" onclick="snsOpen()">Get Instant Access — ₦7,500 →</button>
+    <div class="sns-final-trust">🔒 Secure checkout &nbsp;·&nbsp; 7-day refund guarantee &nbsp;·&nbsp; Instant email delivery</div>
   </div>
 </section>
 
-<!-- MODAL — slides up from bottom on mobile -->
+<!-- MODAL -->
 <div id="sns-modal-bg">
   <div id="sns-modal">
+    <div class="sns-modal-handle"></div>
     <button class="sns-mx" onclick="snsClose()">✕</button>
     <div class="sns-m-title">Almost there! 🎉</div>
     <p class="sns-m-sub">Enter your details — your course link will be sent to this email immediately after payment.</p>
@@ -972,7 +1123,7 @@ src="https://www.facebook.com/tr?id=836627435951529&ev=PageView&noscript=1"/></n
       <input type="text" id="sns-name" placeholder="Full Name" autocomplete="name" inputmode="text">
       <input type="email" id="sns-email" placeholder="Email Address" autocomplete="email" inputmode="email">
       <input type="tel" id="sns-phone" placeholder="Phone Number (e.g. 08012345678)" autocomplete="tel" inputmode="tel">
-      <div class="sns-mdiv">Choose payment method</div>
+      <div class="sns-mdiv">Choose payment</div>
       <button class="sns-pbtn sns-pbtn-ps" onclick="snsPaystack()">💳 Pay ₦7,500 with Paystack</button>
       <div class="sns-or">— or —</div>
       <button class="sns-pbtn sns-pbtn-fw" onclick="snsFlutterwave()">🌊 Pay ₦7,500 with Flutterwave</button>
@@ -981,58 +1132,55 @@ src="https://www.facebook.com/tr?id=836627435951529&ev=PageView&noscript=1"/></n
   </div>
 </div>
 
-<!-- SUCCESS SCREEN -->
+<!-- SUCCESS -->
 <div id="sns-success">
-  <div class="sns-success-icon">🎉</div>
-  <h2 class="sns-success-h">Welcome to Shape & Shine!</h2>
-  <p class="sns-success-sub">Your payment was successful. Your course access is being delivered to your email right now. Check your inbox (and spam folder just in case).</p>
-  <div class="sns-success-steps">
+  <div class="sns-sicon">🎉</div>
+  <h2 class="sns-sh">Welcome to Shape &amp; Shine!</h2>
+  <p class="sns-ssub">Payment confirmed. Your course access is being delivered to your email right now. Check your inbox and spam folder.</p>
+  <div class="sns-ssteps">
     <h4>What happens next</h4>
-    <div class="sns-ss-item"><div class="sns-ss-num">1</div><span>Check your email — your course access link was just sent</span></div>
-    <div class="sns-ss-item"><div class="sns-ss-num">2</div><span>Click the link to access all 8 modules immediately</span></div>
-    <div class="sns-ss-item"><div class="sns-ss-num">3</div><span>Start with Module 0 — take your measurements today</span></div>
-    <div class="sns-ss-item"><div class="sns-ss-num">4</div><span>Your 12-week transformation begins right now 💪🏾</span></div>
+    <div class="sns-ss"><div class="sns-ssn">1</div><span>Check your email — your course access link was just sent</span></div>
+    <div class="sns-ss"><div class="sns-ssn">2</div><span>Click the link to access all 8 modules immediately</span></div>
+    <div class="sns-ss"><div class="sns-ssn">3</div><span>Start with Module 0 — take your measurements today</span></div>
+    <div class="sns-ss"><div class="sns-ssn">4</div><span>Your 12-week transformation begins right now 💪🏾</span></div>
   </div>
-  <p id="sns-ref-txt"></p>
+  <p id="sns-ref"></p>
 </div>
 
 </div><!-- end #sns -->
 
 <script>
-// ── COUNTDOWN ──
+// COUNTDOWN
 (function(){
-  var K='sns_v2_end';
+  var K='sns_end';
   var e=localStorage.getItem(K);
   if(!e){e=Date.now()+24*3600000;localStorage.setItem(K,e);}
   e=parseInt(e);
-  function t(){
+  function tick(){
     var d=Math.max(0,e-Date.now());
     var h=Math.floor(d/3600000),m=Math.floor(d%3600000/60000),s=Math.floor(d%60000/1000);
-    var f=function(n){return String(n).padStart(2,'0');};
-    document.getElementById('sns-ch').textContent=f(h);
-    document.getElementById('sns-cm').textContent=f(m);
-    document.getElementById('sns-cs').textContent=f(s);
+    var p=function(n){return String(n).padStart(2,'0');};
+    document.getElementById('sns-ch').textContent=p(h);
+    document.getElementById('sns-cm').textContent=p(m);
+    document.getElementById('sns-cs').textContent=p(s);
     var b=document.getElementById('sns-bar-time');
-    if(b)b.textContent=f(h)+':'+f(m)+':'+f(s);
+    if(b)b.textContent=p(h)+':'+p(m)+':'+p(s);
   }
-  t();setInterval(t,1000);
+  tick();setInterval(tick,1000);
 })();
 
-// ── SLOT SCARCITY ──
+// SLOTS
 (function(){
-  var K='sns_v2_slots',n=parseInt(localStorage.getItem(K)||'14');
+  var K='sns_slots',n=parseInt(localStorage.getItem(K)||'14');
   if(n>4){n--;localStorage.setItem(K,n);}
   var el=document.getElementById('sns-slots');
   if(el)el.textContent=n+' women';
 })();
 
-// ── MODAL ──
-function snsOpen(method){
-  fbq('track','InitiateCheckout',{
-    content_name:'Shape & Shine Course',value:7500,currency:'NGN',num_items:1
-  });
+// MODAL
+function snsOpen(){
+  fbq('track','InitiateCheckout',{content_name:'Shape & Shine Course',value:7500,currency:'NGN',num_items:1});
   document.getElementById('sns-modal-bg').classList.add('open');
-  // Prevent body scroll when modal open
   document.body.style.overflow='hidden';
 }
 function snsClose(){
@@ -1043,105 +1191,81 @@ document.getElementById('sns-modal-bg').addEventListener('click',function(e){
   if(e.target===this)snsClose();
 });
 
-// ── VALIDATE ──
-function snsCustomer(){
+// VALIDATE
+function snsCust(){
   var name=document.getElementById('sns-name').value.trim();
   var email=document.getElementById('sns-email').value.trim();
   var phone=document.getElementById('sns-phone').value.trim();
-  if(!name||!email||!phone){
-    alert('Please fill in your name, email and phone number to continue.');
-    return null;
-  }
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-    alert('Please enter a valid email address.');
-    return null;
-  }
+  if(!name||!email||!phone){alert('Please fill in all fields to continue.');return null;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Please enter a valid email address.');return null;}
   return{name:name,email:email,phone:phone};
 }
 
-// ── PAYSTACK ──
+// PAYSTACK
 function snsPaystack(){
-  var c=snsCustomer();if(!c)return;
-  var handler=PaystackPop.setup({
+  var c=snsCust();if(!c)return;
+  var h=PaystackPop.setup({
     key:'pk_live_197cfa3ff1fa74a912f25cfd9eb8f95c4ec3ff2f',
     email:c.email,amount:750000,currency:'NGN',
-    ref:'SNS2_PS_'+Date.now(),
+    ref:'SNS_PS_'+Date.now(),
     metadata:{custom_fields:[
       {display_name:'Name',variable_name:'name',value:c.name},
-      {display_name:'Phone',variable_name:'phone',value:c.phone},
-      {display_name:'Course',variable_name:'course',value:'Shape & Shine'}
+      {display_name:'Phone',variable_name:'phone',value:c.phone}
     ]},
     callback:function(res){
-      fbq('track','Purchase',{
-        value:7500,currency:'NGN',
-        content_name:'Shape & Shine Course',
-        content_ids:['sns-001'],content_type:'product'
-      });
-      snsDeliverCourse(c,res.reference,'Paystack');
+      fbq('track','Purchase',{value:7500,currency:'NGN',content_name:'Shape & Shine Course'});
+      snsDeliver(c,res.reference,'Paystack');
     },
     onClose:function(){}
   });
-  handler.openIframe();
+  h.openIframe();
 }
 
-// ── FLUTTERWAVE ──
+// FLUTTERWAVE
 function snsFlutterwave(){
-  var c=snsCustomer();if(!c)return;
+  var c=snsCust();if(!c)return;
   FlutterwaveCheckout({
     public_key:'FLWPUBK-686a1e6200ecfa5aee5012f1aaa4a333-X',
-    tx_ref:'SNS2_FLW_'+Date.now(),
+    tx_ref:'SNS_FLW_'+Date.now(),
     amount:7500,currency:'NGN',
     payment_options:'card,ussd,banktransfer',
     customer:{email:c.email,phone_number:c.phone,name:c.name},
-    customizations:{
-      title:'Shape & Shine',
-      description:'Nigerian Women Body Transformation Course',
-      logo:''
-    },
+    customizations:{title:'Shape & Shine',description:'Nigerian Women Body Transformation Course',logo:''},
     callback:function(res){
       if(res.status==='successful'){
-        fbq('track','Purchase',{
-          value:7500,currency:'NGN',
-          content_name:'Shape & Shine Course',
-          content_ids:['sns-001'],content_type:'product'
-        });
-        snsDeliverCourse(c,res.transaction_id,'Flutterwave');
+        fbq('track','Purchase',{value:7500,currency:'NGN',content_name:'Shape & Shine Course'});
+        snsDeliver(c,res.transaction_id,'Flutterwave');
       }
     },
     onclose:function(){}
   });
 }
 
-// ── POST-PURCHASE DELIVERY ──
-// Replace YOUR_WEBHOOK_URL with your Make.com or Brevo webhook
-function snsDeliverCourse(customer,reference,gateway){
-  snsShowSuccess(reference,gateway,customer.email);
+// DELIVER — replace YOUR_WEBHOOK_URL with your Make.com webhook
+function snsDeliver(c,ref,gw){
+  snsSuccess(ref,gw,c.email);
   fetch('YOUR_WEBHOOK_URL',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({
-      name:customer.name,
-      email:customer.email,
-      phone:customer.phone,
-      reference:reference,
-      gateway:gateway,
+      name:c.name,email:c.email,phone:c.phone,
+      reference:ref,gateway:gw,
       course:'Shape & Shine',
       purchased_at:new Date().toISOString(),
-      course_url:'https://YOUR-COURSE-PLATFORM-URL.com/access'
+      course_url:'https://YOUR-COURSE-URL.com/access'
     })
-  })
-  .then(function(res){console.log('Delivery triggered:',res.status);})
-  .catch(function(err){console.error('Delivery failed:',err);});
+  }).catch(function(e){console.error('Webhook failed:',e);});
 }
 
-function snsShowSuccess(ref,gw,email){
+function snsSuccess(ref,gw,email){
   snsClose();
   document.body.style.overflow='';
-  var sc=document.getElementById('sns-success');
-  document.getElementById('sns-ref-txt').textContent='Ref: '+ref+' ('+gw+') · Sent to: '+email;
-  sc.classList.add('open');
+  document.getElementById('sns-ref').textContent='Ref: '+ref+' ('+gw+') · Sent to: '+email;
+  document.getElementById('sns-success').classList.add('open');
 }
 
-// ── FAQ ──
+// FAQ
 function snsFaq(btn){btn.parentElement.classList.toggle('open');}
 </script>
+</body>
+</html>
