@@ -21,25 +21,17 @@ fbq('track','ViewContent',{content_name:'Shape & Shine Course',value:7500,curren
 src="https://www.facebook.com/tr?id=836627435951529&ev=PageView&noscript=1"/></noscript>
 
 <script src="https://js.paystack.co/v1/inline.js"></script>
-<script src="https://checkout.flutterwave.com/v3.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* =============================================
-   HARD RESET — overrides any theme interference
-   ============================================= */
 html, body {
   margin: 0 !important;
   padding: 0 !important;
   width: 100% !important;
   overflow-x: hidden !important;
 }
-
 * { box-sizing: border-box !important; }
 
-/* =============================================
-   TOKENS
-   ============================================= */
 :root {
   --fire: #C84B18;
   --ember: #E06830;
@@ -57,9 +49,6 @@ html, body {
   --white: #FFFFFF;
 }
 
-/* =============================================
-   BASE — mobile first, no media queries needed
-   ============================================= */
 #sns {
   font-family: 'Inter', sans-serif !important;
   font-size: 16px !important;
@@ -70,13 +59,10 @@ html, body {
   width: 100% !important;
   -webkit-font-smoothing: antialiased;
 }
-
 #sns img { max-width: 100%; display: block; }
 #sns button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; }
 
-/* =============================================
-   URGENCY BAR
-   ============================================= */
+/* URGENCY BAR */
 #sns-bar {
   background: var(--ink);
   color: var(--honey);
@@ -92,9 +78,7 @@ html, body {
 }
 #sns-bar strong { color: var(--ember); }
 
-/* =============================================
-   NAV
-   ============================================= */
+/* NAV */
 #sns-nav {
   background: rgba(253,250,245,0.97);
   border-bottom: 1px solid var(--border);
@@ -127,16 +111,13 @@ html, body {
   touch-action: manipulation;
 }
 
-/* =============================================
-   SHARED UTILITIES
-   ============================================= */
+/* SHARED */
 .sns-wrap {
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
   max-width: 1060px;
 }
-
 .sns-tag {
   display: inline-block;
   font-size: 10px;
@@ -150,7 +131,6 @@ html, body {
 .sns-tag-fire { background: rgba(200,75,24,.1); color: var(--fire); }
 .sns-tag-gold { background: rgba(212,146,26,.12); color: var(--gold); }
 .sns-tag-white { background: rgba(255,255,255,.12); color: rgba(255,255,255,.85); }
-
 .sns-h1 {
   font-family: 'Playfair Display', serif;
   font-size: 36px;
@@ -174,9 +154,7 @@ html, body {
 .sns-body { font-size: 15px; line-height: 1.75; color: var(--bark); }
 .sns-body-sm { font-size: 14px; line-height: 1.7; color: var(--fog); }
 
-/* =============================================
-   BUTTONS
-   ============================================= */
+/* BUTTONS */
 .sns-btn-fire {
   display: block !important;
   width: 100% !important;
@@ -195,7 +173,6 @@ html, body {
   letter-spacing: 0.2px;
 }
 .sns-btn-fire:active { opacity: 0.9; transform: scale(0.99); }
-
 .sns-btn-outline {
   display: block !important;
   width: 100% !important;
@@ -211,7 +188,6 @@ html, body {
   touch-action: manipulation;
   cursor: pointer;
 }
-
 .sns-trust {
   font-size: 11px;
   color: #7A5848;
@@ -220,9 +196,7 @@ html, body {
   text-align: center;
 }
 
-/* =============================================
-   SECTION 1: INTRO
-   ============================================= */
+/* INTRO */
 #sns-intro {
   background: var(--ink);
   padding: 56px 20px 52px;
@@ -248,8 +222,6 @@ html, body {
   line-height: 1.75;
   margin-bottom: 28px;
 }
-
-/* Stats row — 4 in a row on mobile, small text */
 .sns-stats {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
@@ -282,17 +254,10 @@ html, body {
   margin-bottom: 16px;
 }
 
-/* =============================================
-   SECTION 2: DISCOVERY
-   ============================================= */
-#sns-discovery {
-  background: var(--linen);
-  padding: 52px 20px;
-}
+/* DISCOVERY */
+#sns-discovery { background: var(--linen); padding: 52px 20px; }
 #sns-discovery .sns-h2 { margin-bottom: 10px; }
 #sns-discovery .sns-body { margin-bottom: 28px; }
-
-/* CRITICAL: force single column on mobile */
 .sns-pain-grid {
   display: flex !important;
   flex-direction: column !important;
@@ -315,12 +280,8 @@ html, body {
 }
 .sns-pain-card:active::before { opacity: 1; }
 .sns-pain-icon { font-size: 24px; margin-bottom: 10px; display: block; }
-.sns-pain-card h3 {
-  font-size: 14px; font-weight: 700;
-  color: var(--ink); margin-bottom: 6px;
-}
+.sns-pain-card h3 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
 .sns-pain-card p { font-size: 13px; color: var(--fog); line-height: 1.65; }
-
 .sns-bridge {
   background: var(--fire);
   border-radius: 4px;
@@ -334,25 +295,13 @@ html, body {
 }
 .sns-bridge p { font-size: 13px; color: rgba(255,255,255,.7); line-height: 1.65; }
 
-/* =============================================
-   SECTION 3: MECHANISM
-   ============================================= */
+/* MECHANISM */
 #sns-mechanism { background: var(--sand); padding: 52px 20px; }
 #sns-mechanism .sns-h2 { margin-bottom: 12px; }
 #sns-mechanism .sns-body { margin-bottom: 24px; }
-
-/* VS table — stacked on mobile */
-.sns-vs {
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 28px;
-}
+.sns-vs { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 28px; }
 .sns-vs-col { padding: 18px 16px; }
-.sns-vs-col:first-child {
-  background: #FDECEA;
-  border-bottom: 1px solid var(--border);
-}
+.sns-vs-col:first-child { background: #FDECEA; border-bottom: 1px solid var(--border); }
 .sns-vs-col:last-child { background: var(--leaf); }
 .sns-vs-label {
   font-size: 10px; font-weight: 800;
@@ -367,8 +316,6 @@ html, body {
   margin-bottom: 8px; line-height: 1.5;
 }
 .sns-vs-item:last-child { margin-bottom: 0; }
-
-/* Reason cards */
 .sns-reasons { display: flex; flex-direction: column; gap: 10px; }
 .sns-reason-card {
   background: var(--white);
@@ -385,13 +332,10 @@ html, body {
 .sns-rc-body h4 { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
 .sns-rc-body p { font-size: 12px; color: var(--fog); line-height: 1.6; margin: 0; }
 
-/* =============================================
-   SECTION 4: SOLUTION
-   ============================================= */
+/* SOLUTION */
 #sns-solution { background: var(--linen); padding: 52px 20px; }
 #sns-solution .sns-h2 { margin-bottom: 10px; }
 #sns-solution .sns-body { margin-bottom: 28px; }
-
 .sns-modules { border: 1px solid var(--border); background: var(--white); }
 .sns-mod-row {
   display: grid !important;
@@ -405,12 +349,19 @@ html, body {
   font-family: 'Playfair Display', serif;
   font-size: 14px; font-weight: 900;
   display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
 }
 .sns-mod-body { padding: 14px 16px; }
-.sns-mod-body h4 { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.sns-mod-body h4 { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
 .sns-mod-body p { font-size: 12px; color: var(--fog); line-height: 1.5; margin: 0; }
-
-/* What you get — 2 column grid */
+.sns-mod-badge-inline {
+  display: inline-block;
+  font-size: 10px; font-weight: 800;
+  color: var(--green); background: var(--leaf);
+  padding: 2px 8px; border-radius: 2px;
+  letter-spacing: 0.5px; margin-bottom: 5px;
+}
+.sns-mod-badge { display: none; }
 .sns-gets {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
@@ -428,14 +379,10 @@ html, body {
 .sns-get-item h4 { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
 .sns-get-item p { font-size: 11px; color: var(--fog); margin: 0; line-height: 1.45; }
 
-/* =============================================
-   SECTION 5: PROOF
-   ============================================= */
+/* PROOF */
 #sns-proof { background: var(--ink); padding: 52px 20px; }
 #sns-proof .sns-h2 { color: #fff; margin-bottom: 8px; }
 #sns-proof .sns-body-sm { color: #C8A888; margin-bottom: 28px; }
-
-/* Results strip — 2×2 on mobile */
 .sns-result-strip {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
@@ -444,22 +391,14 @@ html, body {
   border: 1px solid #2A1006;
   margin-bottom: 28px;
 }
-.sns-result-item {
-  background: #120600;
-  padding: 20px 12px;
-  text-align: center;
-}
+.sns-result-item { background: #120600; padding: 20px 12px; text-align: center; }
 .sns-result-num {
   font-family: 'Playfair Display', serif;
   font-size: 28px; font-weight: 900;
   color: var(--honey); display: block;
   line-height: 1; margin-bottom: 4px;
 }
-.sns-result-label {
-  font-size: 10px; color: #A07858;
-  text-transform: uppercase; letter-spacing: 1px;
-}
-
+.sns-result-label { font-size: 10px; color: #A07858; text-transform: uppercase; letter-spacing: 1px; }
 .sns-img-note {
   background: #1A0A00;
   border: 1px dashed #4A2818;
@@ -468,8 +407,6 @@ html, body {
   text-align: center; margin-bottom: 16px; line-height: 1.6;
 }
 .sns-img-note strong { color: var(--honey); }
-
-/* Images — 2×2 grid on mobile */
 .sns-img-grid {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
@@ -504,8 +441,6 @@ html, body {
   font-size: 14px; font-weight: 900;
   color: var(--honey); display: block; margin-top: 2px;
 }
-
-/* Testimonials — single column on mobile */
 .sns-testi-grid {
   display: flex !important;
   flex-direction: column !important;
@@ -518,52 +453,34 @@ html, body {
   border-radius: 4px; padding: 20px 16px;
 }
 .sns-tc-stars { color: var(--honey); font-size: 12px; letter-spacing: 2px; margin-bottom: 10px; }
-.sns-tc-quote {
-  font-size: 13px; color: #C8A070;
-  line-height: 1.7; margin-bottom: 14px; font-style: italic;
-}
+.sns-tc-quote { font-size: 13px; color: #C8A070; line-height: 1.7; margin-bottom: 14px; font-style: italic; }
 .sns-tc-name { font-size: 11px; font-weight: 800; color: var(--honey); text-transform: uppercase; letter-spacing: 1px; }
 .sns-tc-meta { font-size: 11px; color: #5A3018; margin-top: 2px; }
 
-/* =============================================
-   COUNTDOWN
-   ============================================= */
-#sns-cd {
-  background: #080200;
-  padding: 20px 20px;
-  text-align: center;
-}
+/* COUNTDOWN */
+#sns-cd { background: #080200; padding: 20px 20px; text-align: center; }
 .sns-cd-label {
   font-size: 10px; color: #5A3018;
   font-weight: 700; letter-spacing: 3px;
   text-transform: uppercase; margin-bottom: 12px;
 }
-.sns-clocks {
-  display: flex; gap: 4px;
-  justify-content: center; align-items: flex-end;
-}
+.sns-clocks { display: flex; gap: 4px; justify-content: center; align-items: flex-end; }
 .sns-cb { text-align: center; min-width: 52px; }
 .sns-cn {
   font-family: 'Playfair Display', serif;
   font-size: 44px; font-weight: 900;
   color: var(--honey); display: block; line-height: 1;
 }
-.sns-cu {
-  font-size: 9px; color: #3A1A08;
-  text-transform: uppercase; letter-spacing: 1.5px;
-}
+.sns-cu { font-size: 9px; color: #3A1A08; text-transform: uppercase; letter-spacing: 1.5px; }
 .sns-csep {
   font-family: 'Playfair Display', serif;
   font-size: 36px; color: var(--ember);
   line-height: 1; padding-bottom: 16px;
 }
 
-/* =============================================
-   SECTION 6: CTA
-   ============================================= */
+/* CTA */
 #sns-cta-sec { background: var(--sand); padding: 52px 20px; }
 #sns-cta-sec .sns-h2 { margin-bottom: 16px; }
-
 .sns-urgency-strip {
   background: var(--linen);
   border: 1px solid var(--border);
@@ -573,7 +490,6 @@ html, body {
   font-size: 13px; color: var(--soil); font-weight: 500; line-height: 1.6;
 }
 .sns-urgency-strip b { color: var(--fire); }
-
 .sns-checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
 .sns-checklist li {
   display: flex; gap: 10px; align-items: flex-start;
@@ -586,7 +502,6 @@ html, body {
   align-items: center; justify-content: center;
   font-size: 10px; font-weight: 900; flex-shrink: 0; margin-top: 2px;
 }
-
 .sns-guar-mini {
   background: var(--leaf); border: 1px solid #A8D8B0;
   border-radius: 4px; padding: 14px;
@@ -596,8 +511,6 @@ html, body {
 .sns-guar-mini .gi { font-size: 22px; flex-shrink: 0; }
 .sns-guar-mini h4 { font-size: 13px; font-weight: 700; color: var(--green); margin-bottom: 3px; }
 .sns-guar-mini p { font-size: 12px; color: #2A5C30; margin: 0; line-height: 1.55; }
-
-/* Price card */
 .sns-price-card {
   background: var(--white);
   border: 2px solid var(--ember);
@@ -613,10 +526,7 @@ html, body {
   letter-spacing: 2px; text-transform: uppercase;
   color: rgba(255,255,255,.6); margin-bottom: 3px;
 }
-.sns-pc-top h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px; font-weight: 900; color: #fff;
-}
+.sns-pc-top h3 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; color: #fff; }
 .sns-pc-body { padding: 20px 18px; }
 .sns-was { font-size: 13px; color: #B09080; text-decoration: line-through; display: block; margin-bottom: 2px; }
 .sns-price-big {
@@ -625,7 +535,6 @@ html, body {
 }
 .sns-price-big sup { font-size: 20px; vertical-align: super; }
 .sns-price-note { font-size: 11px; color: var(--fog); margin: 6px 0 16px; line-height: 1.5; }
-
 .sns-incl { list-style: none; margin-bottom: 18px; }
 .sns-incl li {
   display: flex; gap: 8px; align-items: flex-start;
@@ -634,30 +543,27 @@ html, body {
 }
 .sns-incl li:last-child { border-bottom: none; }
 .sns-incl li::before { content: '✓'; color: var(--green); font-weight: 900; flex-shrink: 0; }
-
 .sns-pay-sep { border-top: 1px solid #F5EAD8; padding-top: 16px; }
 .sns-pay-label {
   font-size: 10px; font-weight: 800; letter-spacing: 2px;
   text-transform: uppercase; color: var(--fog); margin-bottom: 10px;
 }
-.sns-pay-btns { display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
-.sns-pbtn {
-  width: 100%; padding: 16px; border: none; border-radius: 4px;
-  font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700;
+
+/* PAYSTACK ONLY — single full-width button */
+.sns-pbtn-ps {
+  width: 100%; padding: 18px; border: none; border-radius: 4px;
+  font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 800;
   display: flex; align-items: center; justify-content: center; gap: 8px;
-  min-height: 54px;
+  min-height: 56px; background: #0BA4DB; color: #fff;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(11,164,219,.3);
+  letter-spacing: 0.2px;
 }
-.sns-pbtn:active { opacity: 0.9; transform: scale(0.99); }
-.sns-pbtn-ps { background: #0BA4DB; color: #fff; }
-.sns-pbtn-fw { background: #F5A623; color: #fff; }
-.sns-or { font-size: 11px; color: var(--fog); text-align: center; margin: 2px 0; }
-.sns-secure { font-size: 11px; color: var(--fog); text-align: center; margin-top: 8px; }
+.sns-pbtn-ps:active { opacity: 0.9; transform: scale(0.99); }
+.sns-secure { font-size: 11px; color: var(--fog); text-align: center; margin-top: 10px; }
 
-/* =============================================
-   FAQ
-   ============================================= */
+/* FAQ */
 #sns-faq { background: var(--linen); padding: 48px 20px; }
 #sns-faq .sns-h3 { text-align: center; margin-bottom: 24px; }
 .sns-faq-wrap { border: 1px solid var(--border); }
@@ -672,32 +578,18 @@ html, body {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
-.sns-fa {
-  display: none; padding: 0 16px 16px;
-  font-size: 13px; color: var(--fog); line-height: 1.7;
-}
+.sns-fa { display: none; padding: 0 16px 16px; font-size: 13px; color: var(--fog); line-height: 1.7; }
 .sns-fi.open .sns-fa { display: block; }
 .sns-farr { color: var(--ember); font-size: 18px; flex-shrink: 0; transition: transform .2s; }
 .sns-fi.open .sns-farr { transform: rotate(45deg); }
 
-/* =============================================
-   FINAL PUSH
-   ============================================= */
-#sns-final {
-  background: var(--ink);
-  padding: 60px 20px;
-  text-align: center;
-}
+/* FINAL */
+#sns-final { background: var(--ink); padding: 60px 20px; text-align: center; }
 #sns-final .sns-h2 { color: #fff; margin-bottom: 12px; }
 #sns-final .sns-body-sm { color: #5A3018; margin-bottom: 24px; }
-.sns-final-trust {
-  font-size: 11px; color: #4A2010;
-  margin-top: 14px; line-height: 1.8;
-}
+.sns-final-trust { font-size: 11px; color: #4A2010; margin-top: 14px; line-height: 1.8; }
 
-/* =============================================
-   MODAL — bottom sheet on mobile
-   ============================================= */
+/* MODAL */
 #sns-modal-bg {
   display: none;
   position: fixed; inset: 0; z-index: 9000;
@@ -744,18 +636,9 @@ html, body {
   width: 100%;
 }
 .sns-mform input:focus { border-color: var(--ember); }
-.sns-mdiv {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 11px; color: var(--fog);
-}
-.sns-mdiv::before,.sns-mdiv::after {
-  content: ''; flex: 1; height: 1px; background: var(--border);
-}
 .sns-msec { font-size: 11px; color: var(--fog); text-align: center; margin-top: 6px; }
 
-/* =============================================
-   SUCCESS
-   ============================================= */
+/* SUCCESS */
 #sns-success {
   display: none;
   position: fixed; inset: 0; z-index: 9500;
@@ -783,9 +666,7 @@ html, body {
 }
 #sns-ref { font-size: 11px; color: #9A7060; padding: 0 10px; }
 
-/* =============================================
-   TABLET + DESKTOP
-   ============================================= */
+/* TABLET + DESKTOP */
 @media (min-width: 640px) {
   .sns-h1 { font-size: 52px; }
   .sns-h2 { font-size: 36px; }
@@ -808,14 +689,10 @@ html, body {
 @media (min-width: 900px) {
   #sns-intro { padding: 100px 6% 80px; }
   #sns-discovery, #sns-mechanism, #sns-solution,
-  #sns-proof, #sns-cta-sec, #sns-faq, #sns-final {
-    padding: 88px 6%;
-  }
+  #sns-proof, #sns-cta-sec, #sns-faq, #sns-final { padding: 88px 6%; }
   .sns-h1 { font-size: 72px; }
   .sns-h2 { font-size: 44px; }
-  .sns-pain-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
+  .sns-pain-grid { grid-template-columns: repeat(3, 1fr) !important; }
   .sns-pain-card:nth-child(n+4) { border-top: 1px solid var(--border); }
   .sns-mech-layout {
     display: grid !important;
@@ -844,11 +721,11 @@ html, body {
     color: var(--green); background: var(--leaf);
     padding: 3px 8px; border-radius: 2px; white-space: nowrap;
   }
+  .sns-mod-badge-inline { display: none !important; }
   .sns-gets { grid-template-columns: repeat(3, 1fr) !important; }
-  .sns-modal-bg { align-items: center; }
   #sns-modal {
     border-radius: 8px;
-    max-width: 440px;
+    max-width: 420px;
     padding: 36px 32px;
   }
   .sns-modal-handle { display: none; }
@@ -870,7 +747,7 @@ html, body {
   <button class="sns-nav-btn" onclick="snsOpen()">Get Access — ₦7,500</button>
 </nav>
 
-<!-- ═══ INTRO ═══ -->
+<!-- INTRO -->
 <section id="sns-intro">
   <div class="sns-glow1"></div>
   <div class="sns-tag sns-tag-gold">Nigeria's #1 Body Transformation Course for Women</div>
@@ -889,10 +766,10 @@ html, body {
     <button class="sns-btn-fire" onclick="snsOpen()">Yes, I Want This — ₦7,500 →</button>
     <button class="sns-btn-outline" onclick="document.getElementById('sns-discovery').scrollIntoView({behavior:'smooth'})">Show me why first ↓</button>
   </div>
-  <p class="sns-trust">🔒 7-day money-back guarantee &nbsp;·&nbsp; Instant access &nbsp;·&nbsp; Paystack or Flutterwave</p>
+  <p class="sns-trust">🔒 7-day money-back guarantee &nbsp;·&nbsp; Instant access &nbsp;·&nbsp; Secure payment via Paystack</p>
 </section>
 
-<!-- ═══ DISCOVERY ═══ -->
+<!-- DISCOVERY -->
 <section id="sns-discovery">
   <div class="sns-wrap">
     <div class="sns-tag sns-tag-fire">Sound Familiar?</div>
@@ -913,7 +790,7 @@ html, body {
   </div>
 </section>
 
-<!-- ═══ MECHANISM ═══ -->
+<!-- MECHANISM -->
 <section id="sns-mechanism">
   <div class="sns-wrap">
     <div class="sns-tag sns-tag-fire">The Real Reason</div>
@@ -952,21 +829,21 @@ html, body {
   </div>
 </section>
 
-<!-- ═══ SOLUTION ═══ -->
+<!-- SOLUTION -->
 <section id="sns-solution">
   <div class="sns-wrap">
     <div class="sns-tag sns-tag-fire">The Solution</div>
     <h2 class="sns-h2">Introducing Shape &amp; Shine — built for you, finally.</h2>
     <p class="sns-body">8 comprehensive modules that address every real reason Nigerian women struggle. Not a PDF. A complete transformation system.</p>
     <div class="sns-modules">
-      <div class="sns-mod-row"><div class="sns-mod-n">00</div><div class="sns-mod-body"><h4>Welcome &amp; Setting Up for Success</h4><p>Measurements, mindset, goal-setting and your personal 12-week roadmap.</p></div><div class="sns-mod-badge"><span>Start Here</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">01</div><div class="sns-mod-body"><h4>Nutrition &amp; Nigerian Foods</h4><p>Jollof, eba, egusi, suya — all included. Calorie guide, plate method, portions.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">02</div><div class="sns-mod-body"><h4>Exercise &amp; Movement — No Gym Required</h4><p>Home circuits, Afrobeats cardio, glute-building. 30 minutes, 4× a week.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">03</div><div class="sns-mod-body"><h4>7-Day Nigerian Meal Plan + Swaps</h4><p>Full week mapped — breakfast, lunch, dinner, snacks. Every meal Nigerian.</p></div><div class="sns-mod-badge"><span>★ Bonus</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">04</div><div class="sns-mod-body"><h4>Mindset, Emotional Eating &amp; Owambe Life</h4><p>Mental tools to stay on track through parties, family pressure, and real life.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">05</div><div class="sns-mod-body"><h4>Hormones — PCOS, Thyroid, Postpartum &amp; Menopause</h4><p>The module that changes everything. Why your body fights fat loss — and what to do.</p></div><div class="sns-mod-badge"><span>★ Most Loved</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">06</div><div class="sns-mod-body"><h4>Daily Habits, Sleep &amp; the 80/20 Rule</h4><p>Morning routines, sleep optimisation, surviving celebrations without guilt.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
-      <div class="sns-mod-row"><div class="sns-mod-n">07</div><div class="sns-mod-body"><h4>Your 12-Week Transformation Blueprint</h4><p>Week-by-week plan. Myth-busting. Progress tracking. Your forever lifestyle plan.</p></div><div class="sns-mod-badge"><span>Blueprint</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">00</div><div class="sns-mod-body"><span class="sns-mod-badge-inline">Start Here</span><h4>Welcome &amp; Setting Up for Success</h4><p>Measurements, mindset, goal-setting and your personal 12-week roadmap.</p></div><div class="sns-mod-badge"><span>Start Here</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">01</div><div class="sns-mod-body"><span class="sns-mod-badge-inline">Core</span><h4>Nutrition &amp; Nigerian Foods</h4><p>Jollof, eba, egusi, suya — all included. Calorie guide, plate method, portions.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">02</div><div class="sns-mod-body"><span class="sns-mod-badge-inline">Core</span><h4>Exercise &amp; Movement — No Gym Required</h4><p>Home circuits, Afrobeats cardio, glute-building. 30 minutes, 4× a week.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">03</div><div class="sns-mod-body"><span class="sns-mod-badge-inline">★ Bonus</span><h4>7-Day Nigerian Meal Plan + Swaps</h4><p>Full week mapped — breakfast, lunch, dinner, snacks. Every meal Nigerian.</p></div><div class="sns-mod-badge"><span>★ Bonus</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">04</div><div class="sns-mod-body"><span class="sns-mod-badge-inline">Core</span><h4>Mindset, Emotional Eating &amp; Owambe Life</h4><p>Mental tools to stay on track through parties, family pressure, and real life.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">05</div><div class="sns-mod-body"><span class="sns-mod-badge-inline">★ Most Loved</span><h4>Hormones — PCOS, Thyroid, Postpartum &amp; Menopause</h4><p>The module that changes everything. Why your body fights fat loss — and what to do.</p></div><div class="sns-mod-badge"><span>★ Most Loved</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">06</div><div class="sns-mod-body"><span class="sns-mod-badge-inline">Core</span><h4>Daily Habits, Sleep &amp; the 80/20 Rule</h4><p>Morning routines, sleep optimisation, surviving celebrations without guilt.</p></div><div class="sns-mod-badge"><span>Core</span></div></div>
+      <div class="sns-mod-row"><div class="sns-mod-n">07</div><div class="sns-mod-body"><span class="sns-mod-badge-inline">Blueprint</span><h4>Your 12-Week Transformation Blueprint</h4><p>Week-by-week plan. Myth-busting. Progress tracking. Your forever lifestyle plan.</p></div><div class="sns-mod-badge"><span>Blueprint</span></div></div>
     </div>
     <div class="sns-gets">
       <div class="sns-get-item"><div class="sns-get-icon">📱</div><div><h4>Instant Access</h4><p>On your phone right after payment.</p></div></div>
@@ -979,7 +856,7 @@ html, body {
   </div>
 </section>
 
-<!-- ═══ PROOF ═══ -->
+<!-- PROOF -->
 <section id="sns-proof">
   <div class="sns-wrap">
     <div class="sns-tag sns-tag-white">Real Results</div>
@@ -1032,7 +909,7 @@ html, body {
   </div>
 </div>
 
-<!-- ═══ CTA ═══ -->
+<!-- CTA -->
 <section id="sns-cta-sec">
   <div class="sns-wrap">
     <div class="sns-cta-layout">
@@ -1073,13 +950,11 @@ html, body {
             <li>7-day money-back guarantee</li>
           </ul>
           <div class="sns-pay-sep">
-            <div class="sns-pay-label">Choose your payment method</div>
-            <div class="sns-pay-btns">
-              <button class="sns-pbtn sns-pbtn-ps" onclick="snsOpen('paystack')">💳 Pay with Paystack</button>
-              <div class="sns-or">— or —</div>
-              <button class="sns-pbtn sns-pbtn-fw" onclick="snsOpen('flutterwave')">🌊 Pay with Flutterwave</button>
-            </div>
-            <div class="sns-secure">🔒 256-bit SSL · Safe &amp; encrypted checkout</div>
+            <div class="sns-pay-label">Secure payment via Paystack</div>
+            <button class="sns-pbtn-ps" onclick="snsOpen()">
+              💳 Pay ₦7,500 Securely — Get Instant Access
+            </button>
+            <div class="sns-secure">🔒 256-bit SSL · Card · Bank Transfer · USSD · All supported</div>
           </div>
         </div>
       </div>
@@ -1102,17 +977,17 @@ html, body {
   </div>
 </section>
 
-<!-- FINAL PUSH -->
+<!-- FINAL -->
 <section id="sns-final">
   <div class="sns-wrap">
     <h2 class="sns-h2">One year from now, you will either be living in the body you want — or wishing you had started today.</h2>
     <p class="sns-body-sm">The decision is yours. But the price won't stay here forever.</p>
     <button class="sns-btn-fire" style="max-width:400px;margin:0 auto;" onclick="snsOpen()">Get Instant Access — ₦7,500 →</button>
-    <div class="sns-final-trust">🔒 Secure checkout &nbsp;·&nbsp; 7-day refund guarantee &nbsp;·&nbsp; Instant email delivery</div>
+    <div class="sns-final-trust">🔒 Secure checkout via Paystack &nbsp;·&nbsp; 7-day refund guarantee &nbsp;·&nbsp; Instant email delivery</div>
   </div>
 </section>
 
-<!-- MODAL -->
+<!-- MODAL — Paystack only -->
 <div id="sns-modal-bg">
   <div id="sns-modal">
     <div class="sns-modal-handle"></div>
@@ -1123,11 +998,10 @@ html, body {
       <input type="text" id="sns-name" placeholder="Full Name" autocomplete="name" inputmode="text">
       <input type="email" id="sns-email" placeholder="Email Address" autocomplete="email" inputmode="email">
       <input type="tel" id="sns-phone" placeholder="Phone Number (e.g. 08012345678)" autocomplete="tel" inputmode="tel">
-      <div class="sns-mdiv">Choose payment</div>
-      <button class="sns-pbtn sns-pbtn-ps" onclick="snsPaystack()">💳 Pay ₦7,500 with Paystack</button>
-      <div class="sns-or">— or —</div>
-      <button class="sns-pbtn sns-pbtn-fw" onclick="snsFlutterwave()">🌊 Pay ₦7,500 with Flutterwave</button>
-      <div class="sns-msec">🔒 100% secure · Course delivered instantly to your email</div>
+      <button class="sns-pbtn-ps" onclick="snsPaystack()" style="margin-top:6px;">
+        💳 Pay ₦7,500 with Paystack
+      </button>
+      <div class="sns-msec">🔒 100% secure · Card, Bank Transfer & USSD supported · Course delivered instantly</div>
     </div>
   </div>
 </div>
@@ -1206,50 +1080,40 @@ function snsPaystack(){
   var c=snsCust();if(!c)return;
   var h=PaystackPop.setup({
     key:'pk_live_197cfa3ff1fa74a912f25cfd9eb8f95c4ec3ff2f',
-    email:c.email,amount:750000,currency:'NGN',
-    ref:'SNS_PS_'+Date.now(),
+    email:c.email,
+    amount:750000,
+    currency:'NGN',
+    ref:'SNS_'+Date.now(),
     metadata:{custom_fields:[
       {display_name:'Name',variable_name:'name',value:c.name},
-      {display_name:'Phone',variable_name:'phone',value:c.phone}
+      {display_name:'Phone',variable_name:'phone',value:c.phone},
+      {display_name:'Course',variable_name:'course',value:'Shape & Shine'}
     ]},
     callback:function(res){
-      fbq('track','Purchase',{value:7500,currency:'NGN',content_name:'Shape & Shine Course'});
-      snsDeliver(c,res.reference,'Paystack');
+      fbq('track','Purchase',{
+        value:7500,currency:'NGN',
+        content_name:'Shape & Shine Course',
+        content_ids:['sns-001'],content_type:'product'
+      });
+      snsDeliver(c,res.reference);
     },
     onClose:function(){}
   });
   h.openIframe();
 }
 
-// FLUTTERWAVE
-function snsFlutterwave(){
-  var c=snsCust();if(!c)return;
-  FlutterwaveCheckout({
-    public_key:'FLWPUBK-686a1e6200ecfa5aee5012f1aaa4a333-X',
-    tx_ref:'SNS_FLW_'+Date.now(),
-    amount:7500,currency:'NGN',
-    payment_options:'card,ussd,banktransfer',
-    customer:{email:c.email,phone_number:c.phone,name:c.name},
-    customizations:{title:'Shape & Shine',description:'Nigerian Women Body Transformation Course',logo:''},
-    callback:function(res){
-      if(res.status==='successful'){
-        fbq('track','Purchase',{value:7500,currency:'NGN',content_name:'Shape & Shine Course'});
-        snsDeliver(c,res.transaction_id,'Flutterwave');
-      }
-    },
-    onclose:function(){}
-  });
-}
-
 // DELIVER — replace YOUR_WEBHOOK_URL with your Make.com webhook
-function snsDeliver(c,ref,gw){
-  snsSuccess(ref,gw,c.email);
+function snsDeliver(c,ref){
+  snsSuccess(ref,c.email);
   fetch('YOUR_WEBHOOK_URL',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({
-      name:c.name,email:c.email,phone:c.phone,
-      reference:ref,gateway:gw,
+      name:c.name,
+      email:c.email,
+      phone:c.phone,
+      reference:ref,
+      gateway:'Paystack',
       course:'Shape & Shine',
       purchased_at:new Date().toISOString(),
       course_url:'https://YOUR-COURSE-URL.com/access'
@@ -1257,10 +1121,10 @@ function snsDeliver(c,ref,gw){
   }).catch(function(e){console.error('Webhook failed:',e);});
 }
 
-function snsSuccess(ref,gw,email){
+function snsSuccess(ref,email){
   snsClose();
   document.body.style.overflow='';
-  document.getElementById('sns-ref').textContent='Ref: '+ref+' ('+gw+') · Sent to: '+email;
+  document.getElementById('sns-ref').textContent='Ref: '+ref+' · Access sent to: '+email;
   document.getElementById('sns-success').classList.add('open');
 }
 
