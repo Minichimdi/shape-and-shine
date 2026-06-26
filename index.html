@@ -1207,7 +1207,7 @@ function snsPaystack(){
 //         "content_name": "Shape & Shine Course"
 //       }
 //     }],
-//     "access_token": "YOUR_META_CAPI_ACCESS_TOKEN"
+//     "access_token": "EAAVyppMTSiMBR1GuaLhVHM7J4cDBWNjwAYOWqlufrkORYz7GwryCJrucMRNf93YiPOf2KAm2ad11NqPkpA71WePzQ7TiY5DPM8nhS9ZCB71YRWHp72ZCCcFmnHhltK1TonRhbz7llV3wwLOtCoTf8PP4MZAe0g8kpcZBKuHizw2PFYGNShBTnajohg0pp7J4RgZDZD"
 //   }
 //
 // Action 2: Brevo → Send transactional email (course delivery)
@@ -1223,7 +1223,7 @@ function snsDeliver(c, ref, eventID){
   snsSuccess(ref, c.email);
 
   // Fire Make.com webhook — handles CAPI + email delivery
-  fetch('YOUR_MAKE_WEBHOOK_URL', {
+  fetch('https://hook.eu1.make.com/9ji8apzyifxpreg24rxfbhphbivtu2uo', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -1235,7 +1235,7 @@ function snsDeliver(c, ref, eventID){
       gateway:      'Paystack',
       course:       'Shape & Shine',
       purchased_at: new Date().toISOString(),
-      course_url:   'https://YOUR-COURSE-URL.com/access',
+      course_url:   'https://sns-course-kappa.vercel.app/',
       access_code:  'shine2025',
 
       // Meta CAPI deduplication
