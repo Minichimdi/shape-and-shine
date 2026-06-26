@@ -1078,7 +1078,7 @@ function snsOpen(){
   // Generate unique eventID for deduplication
   var eventID = 'sns_ic_' + Date.now() + '_' + Math.random().toString(36).substr(2,9);
 
-  // Browser pixel — InitiateCheckout
+  // Browser pixel — InitiateCheckout (browser only, does NOT hit Make.com)
   fbq('track', 'InitiateCheckout', {
     content_name: 'Shape & Shine Course',
     content_ids: ['sns-course-001'],
@@ -1088,20 +1088,9 @@ function snsOpen(){
     num_items: 1
   }, { eventID: eventID });
 
-  // Server-side CAPI — InitiateCheckout
-  // Fires to Make.com which forwards to Meta CAPI
-  fetch('https://hook.eu1.make.com/9ji8apzyifxpreg24rxfbhphbivtu2uo', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      event_name: 'InitiateCheckout',
-      event_id: eventID,
-      event_time: Math.floor(Date.now() / 1000),
-      event_source_url: window.location.href,
-      value: 7500,
-      currency: 'NGN'
-    })
-  }).catch(function(){});
+  // NOTE: InitiateCheckout intentionally does NOT call the Make.com webhook.
+  // Only a completed Purchase triggers Make.com (course delivery + CAPI).
+  // This prevents course emails being sent when someone only opens the popup.
 
   document.getElementById('sns-modal-bg').classList.add('open');
   document.body.style.overflow = 'hidden';
