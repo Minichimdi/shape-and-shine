@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -18,7 +17,6 @@
      code Meta gives you (looks like: abcdef1234567890)
   ════════════════════════════════════════════════════
 -->
-
 <meta name="facebook-domain-verification" content="YOUR_DOMAIN_VERIFICATION_CODE" />
 
 <!--
@@ -35,7 +33,6 @@
   ✅ Domain verification meta tag added above
   ════════════════════════════════════════════════════
 -->
-
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -67,14 +64,12 @@ fbq('track', 'ViewContent', {
   eventID: 'sns_vc_' + Date.now()
 });
 </script>
-
 <noscript>
   <img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=26699632823044054&ev=PageView&noscript=1"/>
 </noscript>
 
 <script src="https://js.paystack.co/v1/inline.js"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -768,7 +763,6 @@ html, body {
   #sns-modal-bg { align-items: center; }
 }
 </style>
-
 </head>
 <body>
 <div id="sns">
@@ -1152,7 +1146,7 @@ function snsPaystack(){
   var paystackRef = 'SNS_' + Date.now();
 
   var h = PaystackPop.setup({
-    key: 'pk_test_7d2362a689cdd8587d1bcf6e670298138684ffbb',
+    key: 'pk_test_7d2362a689cdd8587d1bcf6e670298138684ffbb', // ← TEST MODE. Swap back to pk_live_197cfa3ff1fa74a912f25cfd9eb8f95c4ec3ff2f when going live
     email: c.email,
     amount: 750000, // ₦7,500 in kobo
     currency: 'NGN',
@@ -1229,7 +1223,7 @@ function snsDeliver(c, ref, eventID){
   snsSuccess(ref, c.email);
 
   // Fire Make.com webhook — handles CAPI + email delivery
-  fetch('https://hook.eu1.make.com/9ji8apzyifxpreg24rxfbhphbivtu2uo', {
+  fetch('YOUR_MAKE_WEBHOOK_URL', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -1241,7 +1235,7 @@ function snsDeliver(c, ref, eventID){
       gateway:      'Paystack',
       course:       'Shape & Shine',
       purchased_at: new Date().toISOString(),
-      course_url:   'https://sns-course-kappa.vercel.app/',
+      course_url:   'https://YOUR-COURSE-URL.com/access',
       access_code:  'shine2025',
 
       // Meta CAPI deduplication
@@ -1272,9 +1266,5 @@ function snsSuccess(ref, email){
 // FAQ
 function snsFaq(btn){ btn.parentElement.classList.toggle('open'); }
 </script>
-
 </body>
 </html>
-HTMLEOF
-echo "Done — $(wc -c < /mnt/user-data/outputs/shape-shine-pixel-fixed.html) bytes"
-Output
