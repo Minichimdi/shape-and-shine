@@ -1223,7 +1223,7 @@ function snsDeliver(c, ref, eventID){
   snsSuccess(ref, c.email);
 
   // Fire Make.com webhook — handles CAPI + email delivery
-  fetch('Yhttps://hook.eu1.make.com/9ji8apzyifxpreg24rxfbhphbivtu2uo', {
+  fetch('YOUR_MAKE_WEBHOOK_URL', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -1235,7 +1235,7 @@ function snsDeliver(c, ref, eventID){
       gateway:      'Paystack',
       course:       'Shape & Shine',
       purchased_at: new Date().toISOString(),
-      course_url:   'https://sns-course-kappa.vercel.app/',
+      course_url:   'https://YOUR-COURSE-URL.com/access',
       access_code:  'shine2025',
 
       // Meta CAPI deduplication
