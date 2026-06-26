@@ -1211,38 +1211,13 @@ function snsDeliver(c, ref, eventID){
   // Show success screen immediately
   snsSuccess(ref, c.email);
 
-  // Fire Make.com webhook — handles CAPI + email delivery
-  fetch('https://hook.eu1.make.com/9ji8apzyifxpreg24rxfbhphbivtu2uo', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      // Customer data
-      name:         c.name,
-      email:        c.email,
-      phone:        c.phone,
-      reference:    ref,
-      gateway:      'Paystack',
-      course:       'Shape & Shine',
-      purchased_at: new Date().toISOString(),
-      course_url:   'https://sns-course-kappa.vercel.app/',
-      access_code:  'shine2025',
-
-      // Meta CAPI deduplication
-      event_id:     eventID,
-      event_name:   'Purchase',
-      event_time:   Math.floor(Date.now() / 1000),
-      event_source_url: 'https://getshapeandshine.com',
-      pixel_id:     '26699632823044054',
-
-      // Purchase data for CAPI
-      value:        7500,
-      currency:     'NGN',
-      content_name: 'Shape & Shine Course',
-      content_ids:  ['sns-course-001']
-    })
-  }).catch(function(err){
-    console.error('Webhook failed:', err);
-  });
+  // NOTE: Course delivery is handled entirely by the Paystack server webhook,
+  // NOT from the browser. Paystack fires charge.success directly to Make.com
+  // the moment payment clears — this works even if the buyer closes their
+  // browser, so no purchase is ever missed.
+  //
+  // The browser only fires the Meta Pixel Purchase event below for tracking.
+}
 }
 
 function snsSuccess(ref, email){
