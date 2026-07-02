@@ -623,6 +623,53 @@ html, body {
 #sns-final .sns-body-sm { color: #5A3018; margin-bottom: 24px; }
 .sns-final-trust { font-size: 11px; color: #4A2010; margin-top: 14px; line-height: 1.8; }
 
+/* CUSTOMER SUPPORT */
+#sns-support { background: var(--linen); padding: 44px 20px; }
+#sns-support .sns-wrap { text-align: center; }
+.sns-support-tag {
+  display: inline-block;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px;
+  margin-bottom: 12px;
+  background: rgba(200,75,24,.1); color: var(--fire);
+}
+#sns-support h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 700; color: var(--ink);
+  margin-bottom: 8px;
+}
+#sns-support p.sns-support-sub {
+  font-size: 14px; color: var(--fog); line-height: 1.6;
+  margin-bottom: 24px; max-width: 480px;
+  margin-left: auto; margin-right: auto;
+}
+.sns-support-cards {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.sns-support-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px 20px;
+  display: flex; align-items: center; gap: 14px;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.sns-support-card:active { opacity: 0.85; }
+.sns-support-icon { font-size: 26px; flex-shrink: 0; }
+.sns-support-text { text-align: left; }
+.sns-support-text h4 {
+  font-size: 12px; font-weight: 700; color: var(--ink);
+  margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.sns-support-text span { font-size: 14px; color: var(--fire); font-weight: 600; word-break: break-all; }
+
 #sns-modal-bg {
   display: none;
   position: fixed; inset: 0; z-index: 9000;
@@ -720,7 +767,8 @@ html, body {
 @media (min-width: 900px) {
   #sns-intro { padding: 100px 6% 80px; }
   #sns-discovery, #sns-mechanism, #sns-solution,
-  #sns-proof, #sns-cta-sec, #sns-faq, #sns-final { padding: 88px 6%; }
+  #sns-proof, #sns-cta-sec, #sns-faq, #sns-final, #sns-support { padding: 88px 6%; }
+  .sns-support-cards { grid-template-columns: 1fr 1fr !important; max-width: 640px; }
   .sns-h1 { font-size: 72px; }
   .sns-h2 { font-size: 44px; }
   .sns-pain-grid { grid-template-columns: repeat(3, 1fr) !important; }
@@ -892,7 +940,6 @@ html, body {
       <div class="sns-result-item"><span class="sns-result-num">12wk</span><span class="sns-result-label">Transformation</span></div>
       <div class="sns-result-item"><span class="sns-result-num">4.9★</span><span class="sns-result-label">Avg Rating</span></div>
     </div>
-    <div class="sns-img-note"><strong>👇 Your real transformation photos go here</strong> — replace these with actual before/after images from course members.</div>
     <div class="sns-img-grid">
       <div class="sns-img-card">
         <img src="https://res.cloudinary.com/dhgedmsrb/image/upload/v1781880858/Adaeze.JPG_ggieio.jpg" alt="Adaeze" loading="lazy">
@@ -994,6 +1041,30 @@ html, body {
       <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">I'm a busy mum. Do I have time for this?<span class="sns-farr">+</span></button><div class="sns-fa">Workouts are 30 minutes, 3–4 times per week. No gym. No equipment. Built entirely for women who have no spare time — because most Nigerian women don't.</div></div>
       <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">How do I access the course after paying?<span class="sns-farr">+</span></button><div class="sns-fa">Immediately after payment, an email with your login link is sent to the address you entered. You can start Module 1 within minutes.</div></div>
       <div class="sns-fi"><button class="sns-fq" onclick="snsFaq(this)">What if I want a refund?<span class="sns-farr">+</span></button><div class="sns-fa">7-day no-questions-asked refund. Email us within 7 days and receive every kobo back within 24 hours.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="sns-support">
+  <div class="sns-wrap">
+    <div class="sns-support-tag">We're Here For You</div>
+    <h3>Questions? Talk to a real person.</h3>
+    <p class="sns-support-sub">Our support team responds within 24 hours. Reach out any time before or after you join — we're happy to help.</p>
+    <div class="sns-support-cards">
+      <a class="sns-support-card" href="https://wa.me/2347048607411" target="_blank" rel="noopener">
+        <span class="sns-support-icon">💬</span>
+        <span class="sns-support-text">
+          <h4>WhatsApp</h4>
+          <span>+234 704 860 7411</span>
+        </span>
+      </a>
+      <a class="sns-support-card" href="mailto:support@getshapeandshine.com">
+        <span class="sns-support-icon">✉️</span>
+        <span class="sns-support-text">
+          <h4>Email Support</h4>
+          <span>support@getshapeandshine.com</span>
+        </span>
+      </a>
     </div>
   </div>
 </section>
